@@ -8,7 +8,7 @@ export const SuccessNotification: React.FC<SuccessNotificationProps> = ({ show }
   if (!show) return null;
 
   return (
-    <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
+    <div className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none">
       <div className="animate-success-pop">
         <div className="
           flex items-center gap-3 px-8 py-4 rounded-full
