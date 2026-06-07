@@ -341,7 +341,8 @@
     "id": "57",
     "ukrainian": "Математика",
     "english": "math",
-    "emoji": ""
+    "emoji": "",
+    "alternatives": ["mathematics", "maths"]
   },
   {
     "id": "58",
@@ -1122,7 +1123,8 @@
     "id": "186",
     "ukrainian": "Говорити",
     "english": "speak",
-    "emoji": "🗣️"
+    "emoji": "🗣️",
+    "alternatives": ["talk"]
   },
   {
     "id": "187",
@@ -1170,13 +1172,15 @@
     "id": "194",
     "ukrainian": "Великий",
     "english": "big",
-    "emoji": ""
+    "emoji": "",
+    "alternatives": ["large"]
   },
   {
     "id": "195",
     "ukrainian": "Маленький",
     "english": "small",
-    "emoji": ""
+    "emoji": "",
+    "alternatives": ["little"]
   },
   {
     "id": "196",
@@ -1224,7 +1228,8 @@
     "id": "203",
     "ukrainian": "Красивий",
     "english": "beautiful",
-    "emoji": ""
+    "emoji": "",
+    "alternatives": ["pretty"]
   },
   {
     "id": "204",
@@ -1284,25 +1289,29 @@
     "id": "213",
     "ukrainian": "Щасливий",
     "english": "happy",
-    "emoji": "😊"
+    "emoji": "😊",
+    "alternatives": ["glad"]
   },
   {
     "id": "214",
     "ukrainian": "Сумний",
     "english": "sad",
-    "emoji": "😢"
+    "emoji": "😢",
+    "alternatives": ["unhappy"]
   },
   {
     "id": "215",
     "ukrainian": "Злий",
     "english": "angry",
-    "emoji": "😠"
+    "emoji": "😠",
+    "alternatives": ["mad"]
   },
   {
     "id": "216",
     "ukrainian": "Наляканий",
     "english": "scared",
-    "emoji": ""
+    "emoji": "",
+    "alternatives": ["afraid", "frightened"]
   },
   {
     "id": "217",
@@ -1350,7 +1359,8 @@
     "id": "224",
     "ukrainian": "Розумний",
     "english": "clever",
-    "emoji": ""
+    "emoji": "",
+    "alternatives": ["smart"]
   },
   {
     "id": "225",
@@ -1368,7 +1378,8 @@
     "id": "227",
     "ukrainian": "Літак",
     "english": "airplane",
-    "emoji": "✈️"
+    "emoji": "✈️",
+    "alternatives": ["aeroplane"]
   },
   {
     "id": "228",
@@ -1706,7 +1717,8 @@
     "id": "283",
     "ukrainian": "Допомагати",
     "english": "help",
-    "emoji": ""
+    "emoji": "",
+    "alternatives": ["assist"] 
   },
   {
     "id": "284",
