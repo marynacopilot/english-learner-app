@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useVocabulary } from '../hooks/useVocabulary';
 import { Word } from '../types/vocabulary';
 import { WordCard } from './WordCard';
@@ -6,7 +6,7 @@ import { InputField } from './InputField';
 import { Button } from './Button';
 import { Stats } from './Stats';
 import { SuccessNotification } from './SuccessNotification';
-import { SkippedWordsList } from './SkippedWordsList';
+import { WordsList } from './WordsList';
 import { Toggle } from './Toggle';
 
 interface VocabularyAppProps {
@@ -14,13 +14,14 @@ interface VocabularyAppProps {
 }
 
 export const VocabularyApp: React.FC<VocabularyAppProps> = ({ words }) => {
+  const [showModal, setShowModal] = useState(false);
+  const [modalType, setModalType] = useState<'learned' | 'skipped'>('learned');
+
   const {
     state,
     checkAnswer,
     skipWord,
     toggleSkippedWordsMode,
-    openSkippedModal,
-    closeSkippedModal,
     updateInput,
     getStats,
   } = useVocabulary(words);
@@ -38,22 +39,26 @@ export const VocabularyApp: React.FC<VocabularyAppProps> = ({ words }) => {
 
   const canToggleSkippedMode = state.skippedWords.length > 0;
 
+  const handleLearnedClick = () => {
+    setModalType('learned');
+    setShowModal(true);
+  };
+
+  const handleSkippedClick = () => {
+    setModalType('skipped');
+    setShowModal(true);
+  };
+
   return (
     <div className="min-h-screen bg-surface flex flex-col">
       {/* Header */}
       <header className="bg-surface-container-low p-4 shadow-soft flex-shrink-0">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <h1 
-            className="text-2xl font-bold text-primary"
-            style={{ fontFamily: 'Quicksand' }}
-          >
-            English Fun
-          </h1>
+        <div className="max-w-4xl mx-auto flex items-end justify-end">
           <Stats 
             learned={stats.learned}
             skipped={stats.skipped}
-            onLearnedClick={openSkippedModal}
-            onSkippedClick={openSkippedModal}
+            onLearnedClick={handleLearnedClick}
+            onSkippedClick={handleSkippedClick}
           />
         </div>
       </header>
@@ -131,12 +136,13 @@ export const VocabularyApp: React.FC<VocabularyAppProps> = ({ words }) => {
       {/* Success Notification */}
       <SuccessNotification show={state.showSuccess} />
 
-      {/* Skipped Words Modal */}
-      <SkippedWordsList
-        words={state.skippedWords}
-        isOpen={state.showSkippedModal}
-        onClose={closeSkippedModal}
-        title="My Skipped Words"
+      {/* Words Modal */}
+      <WordsList
+        words={modalType === 'learned' ? state.learnedWords : state.skippedWords}
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        title={modalType === 'learned' ? 'My Learned Words' : 'My Skipped Words'}
+        type={modalType}
       />
     </div>
   );
