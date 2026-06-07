@@ -1,0 +1,22 @@
+[
+  { "id": "1", "ukrainian": "Кіт", "english": "cat", "emoji": "🐱" },
+  { "id": "2", "ukrainian": "Собака", "english": "dog", "emoji": "🐶" },
+  { "id": "3", "ukrainian": "Яблуко", "english": "apple", "emoji": "🍎" },
+  { "id": "4", "ukrainian": "Книга", "english": "book", "emoji": "📚" },
+  { "id": "5", "ukrainian": "Будинок", "english": "house", "emoji": "🏠" },
+  { "id": "6", "ukrainian": "Сонце", "english": "sun", "emoji": "☀️" },
+  { "id": "7", "ukrainian": "Луна", "english": "moon", "emoji": "🌙" },
+  { "id": "8", "ukrainian": "Дерево", "english": "tree", "emoji": "🌳" },
+  { "id": "9", "ukrainian": "Риба", "english": "fish", "emoji": "🐟" },
+  { "id": "10", "ukrainian": "Квітка", "english": "flower", "emoji": "🌸" },
+  { "id": "11", "ukrainian": "Намет", "english": "tent", "emoji": "⛺" },
+  { "id": "12", "ukrainian": "Звіздочка", "english": "star", "emoji": "⭐" },
+  { "id": "13", "ukrainian": "Гора", "english": "mountain", "emoji": "⛰️" },
+  { "id": "14", "ukrainian": "Річка", "english": "river", "emoji": "🌊" },
+  { "id": "15", "ukrainian": "Птах", "english": "bird", "emoji": "🐦" },
+  { "id": "16", "ukrainian": "Метелик", "english": "butterfly", "emoji": "🦋" },
+  { "id": "17", "ukrainian": "Земля", "english": "earth", "emoji": "🌍" },
+  { "id": "18", "ukrainian": "Вода", "english": "water", "emoji": "💧" },
+  { "id": "19", "ukrainian": "Вогонь", "english": "fire", "emoji": "🔥" },
+  { "id": "20", "ukrainian": "Повітря", "english": "air", "emoji": "💨" }
+]
