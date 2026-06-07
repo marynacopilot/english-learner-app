@@ -165,7 +165,8 @@
     "id": "28",
     "ukrainian": "Кролик",
     "english": "rabbit",
-    "emoji": "🐰"
+    "emoji": "🐰",
+    "alternatives": ["bunny"]
   },
   {
     "id": "29",
@@ -267,7 +268,8 @@
     "id": "45",
     "ukrainian": "Ноутбук",
     "english": "laptop",
-    "emoji": "💻"
+    "emoji": "💻",
+    "alternatives": ["notebook"]
   },
   {
     "id": "46",
@@ -357,7 +359,8 @@
     "id": "60",
     "ukrainian": "Футболка",
     "english": "T-shirt",
-    "emoji": "👕"
+    "emoji": "👕",
+    "alternatives": ["tee"]
   },
   {
     "id": "61",
@@ -568,19 +571,22 @@
     "id": "95",
     "ukrainian": "Друг",
     "english": "friend",
-    "emoji": ""
+    "emoji": "",
+    "alternatives": ["buddy"]
   },
   {
     "id": "96",
     "ukrainian": "Мама",
     "english": "mother",
-    "emoji": ""
+    "emoji": "",
+    "alternatives": ["mom", "mum"]
   },
   {
     "id": "97",
     "ukrainian": "Тато",
     "english": "father",
-    "emoji": ""
+    "emoji": "",
+    "alternatives": ["dad"]
   },
   {
     "id": "98",
@@ -1380,13 +1386,15 @@
     "id": "230",
     "ukrainian": "Мотоцикл",
     "english": "motorcycle",
-    "emoji": "🏍️"
+    "emoji": "🏍️",
+    "alternatives": ["motorbike"]
   },
   {
     "id": "231",
     "ukrainian": "Таксі",
     "english": "taxi",
-    "emoji": "🚕"
+    "emoji": "🚕",
+    "alternatives": ["cab"]
   },
   {
     "id": "232",
@@ -1704,7 +1712,8 @@
     "id": "284",
     "ukrainian": "Лікар",
     "english": "doctor",
-    "emoji": ""
+    "emoji": "",
+    "alternatives": ["physician"]
   },
   {
     "id": "285",
@@ -1752,7 +1761,8 @@
     "id": "292",
     "ukrainian": "Магазин",
     "english": "shop",
-    "emoji": ""
+    "emoji": "",
+    "alternatives": ["store"]
   },
   {
     "id": "293",
@@ -1914,7 +1924,8 @@
     "id": "319",
     "ukrainian": "Диван",
     "english": "sofa",
-    "emoji": "🛋️"
+    "emoji": "🛋️",
+    "alternatives": ["couch"]
   },
   {
     "id": "320",
@@ -1932,7 +1943,8 @@
     "id": "322",
     "ukrainian": "Холодильник",
     "english": "fridge",
-    "emoji": ""
+    "emoji": "",
+    "alternatives": ["refrigerator"]
   },
   {
     "id": "323",
