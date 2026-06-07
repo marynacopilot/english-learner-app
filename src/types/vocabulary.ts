@@ -3,6 +3,7 @@ export interface Word {
   ukrainian: string;
   english: string;
   emoji?: string;
+  alternatives?: string[];
 }
 
 export interface VocabularyState {
