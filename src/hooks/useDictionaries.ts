@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Word } from '../types/vocabulary';
 
+// Імпортуємо всі словники
+import wordsData from '../data/words.json';
+
 export interface DictionaryInfo {
   name: string;
   path: string;
@@ -11,36 +14,28 @@ const loadDictionaries = async (): Promise<Map<string, Word[]>> => {
   const dictionaries = new Map<string, Word[]>();
   
   try {
-    // Завантажуємо основний словник
-    const wordsModule = await import('../data/words.json');
-    const wordsData = Array.isArray(wordsModule.default) ? wordsModule.default : wordsModule;
-    dictionaries.set('words', wordsData);
+    // Основний словник
+    const words = Array.isArray(wordsData) ? wordsData : (wordsData as any).default;
+    dictionaries.set('words', words);
     
-    // Спробуємо завантажити додаткові словники з папки data
-    // Динамічно шукаємо всі .json файли в data папці
-    const dataContext = (import.meta as any).glob?.('/src/data/*.json', { eager: true });
+    // Спробуємо завантажити динамічно всі .json файли з data папки
+    // Це працює з Vite glob import
+    const modules = import.meta.glob<{ default: Word[] }>('../data/*.json', { eager: true });
     
-    if (dataContext) {
-      Object.entries(dataContext).forEach(([path, module]: [string, any]) => {
-        const fileName = path.split('/').pop()?.replace('.json', '') || '';
-        if (fileName && fileName !== 'words') {
-          const data = Array.isArray(module.default) ? module.default : module;
-          if (Array.isArray(data)) {
-            dictionaries.set(fileName, data);
-          }
+    Object.entries(modules).forEach(([path, module]) => {
+      const fileName = path.split('/').pop()?.replace('.json', '') || '';
+      if (fileName && fileName !== 'words') {
+        const data = module.default;
+        if (Array.isArray(data)) {
+          dictionaries.set(fileName, data);
         }
-      });
-    }
+      }
+    });
   } catch (error) {
     console.error('Error loading dictionaries:', error);
     // Повертаємо хоча б основний словник
-    try {
-      const wordsModule = await import('../data/words.json');
-      const wordsData = Array.isArray(wordsModule.default) ? wordsModule.default : wordsModule;
-      dictionaries.set('words', wordsData);
-    } catch (e) {
-      console.error('Failed to load default dictionary:', e);
-    }
+    const words = Array.isArray(wordsData) ? wordsData : (wordsData as any).default;
+    dictionaries.set('words', words);
   }
   
   return dictionaries;
@@ -58,7 +53,9 @@ export const useDictionaries = () => {
         const dicts = await loadDictionaries();
         setDictionaries(dicts);
         
-        // Завантажуємо вибір зі localStorage
+        console.log('Available dictionaries:', Array.from(dicts.keys()));
+        
+        // Завантажуємо виб or зі localStorage
         const savedDict = localStorage.getItem('selectedDictionary');
         if (savedDict && dicts.has(savedDict)) {
           setSelectedDictionary(savedDict);
@@ -87,7 +84,7 @@ export const useDictionaries = () => {
   };
 
   const getDictionaryList = (): string[] => {
-    return Array.from(dictionaries.keys());
+    return Array.from(dictionaries.keys()).sort();
   };
 
   return {
