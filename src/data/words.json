@@ -363,7 +363,8 @@
     "id": "61",
     "ukrainian": "Штани",
     "english": "trousers",
-    "emoji": "👖"
+    "emoji": "👖",
+    "alternatives": ["pants"]
   },
   {
     "id": "62",
@@ -705,7 +706,8 @@
     "id": "118",
     "ukrainian": "Колір",
     "english": "colour",
-    "emoji": "🎨"
+    "emoji": "🎨",
+    "alternatives": ["color"]
   },
   {
     "id": "119",
@@ -951,7 +953,8 @@
     "id": "159",
     "ukrainian": "Осінь",
     "english": "autumn",
-    "emoji": "🍂"
+    "emoji": "🍂",
+    "alternatives": ["fall"]
   },
   {
     "id": "160",
