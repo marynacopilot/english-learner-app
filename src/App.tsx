@@ -61,7 +61,7 @@ function App() {
                   className="text-sm font-medium text-on-surface-variant block mb-2"
                   style={{ fontFamily: 'Quicksand' }}
                 >
-                  Виберіть словник:
+                  Choose dictionary:
                 </label>
                 <div className="flex flex-wrap gap-2">
                   {dictionaryList.map((dict) => (
