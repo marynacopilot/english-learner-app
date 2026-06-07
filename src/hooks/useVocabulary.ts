@@ -15,12 +15,25 @@ const getNextWord = (
   skippedWords: Word[],
   useSkippedWordsMode: boolean
 ): Word | null => {
-  if (useSkippedWordsMode && skippedWords.length > 0) {
-    return skippedWords[Math.floor(Math.random() * skippedWords.length)];
+  // When repeat skipped words mode is DISABLED:
+  // Only offer words from availableWords (words not yet seen or learned)
+  if (!useSkippedWordsMode) {
+    if (availableWords.length > 0) {
+      return availableWords[Math.floor(Math.random() * availableWords.length)];
+    }
+    return null;
   }
-  if (availableWords.length > 0) {
-    return availableWords[Math.floor(Math.random() * availableWords.length)];
+
+  // When repeat skipped words mode is ENABLED:
+  // Mix both available words and skipped words together
+  if (useSkippedWordsMode) {
+    const combinedWords = [...availableWords, ...skippedWords];
+    if (combinedWords.length > 0) {
+      return combinedWords[Math.floor(Math.random() * combinedWords.length)];
+    }
+    return null;
   }
+
   return null;
 };
 
@@ -92,8 +105,9 @@ export const useVocabulary = (initialWords: Word[]) => {
 
       const isAlreadySkipped = prev.skippedWords.some(w => w.id === prev.currentWord!.id);
       const newSkipped = isAlreadySkipped 
-        ? prev.skippedWords 
-        : [...prev.skippedWords, prev.currentWord];
+        ? prev.skippedWords  // Keep the word in skipped list if already skipped
+        : [...prev.skippedWords, prev.currentWord];  // Add to skipped list for first time
+      
       const newAvailable = prev.availableWords.filter(w => w.id !== prev.currentWord!.id);
       const nextWord = getNextWord(newAvailable, newSkipped, prev.useSkippedWordsMode);
 
