@@ -38,57 +38,65 @@ export const useVocabulary = (initialWords: Word[]) => {
   });
 
   useEffect(() => {
-    if (state.currentWord === null && state.availableWords.length > 0) {
-      const firstWord = getNextWord(
-        state.availableWords,
-        state.skippedWords,
-        state.useSkippedWordsMode
-      );
-      if (firstWord) {
-        setState(prev => ({ ...prev, currentWord: firstWord }));
+    setState(prev => {
+      if (prev.currentWord === null && prev.availableWords.length > 0) {
+        const firstWord = getNextWord(
+          prev.availableWords,
+          prev.skippedWords,
+          prev.useSkippedWordsMode
+        );
+        if (firstWord) {
+          return { ...prev, currentWord: firstWord };
+        }
       }
-    }
+      return prev;
+    });
   }, []);
 
   const checkAnswer = useCallback((answer: string) => {
-    if (!state.currentWord) return false;
-    const isCorrect = answer.toLowerCase().trim() === 
-                      state.currentWord.english.toLowerCase().trim();
-    if (isCorrect) {
-      handleCorrectAnswer();
-    }
-    return isCorrect;
-  }, [state.currentWord]);
-
-  const handleCorrectAnswer = useCallback(() => {
-    if (!state.currentWord) return;
     setState(prev => {
-      const newLearned = [...prev.learnedWords, prev.currentWord!];
-      let newAvailable = prev.availableWords.filter(w => w.id !== prev.currentWord!.id);
-      let newSkipped = prev.skippedWords.filter(w => w.id !== prev.currentWord!.id);
-      const nextWord = getNextWord(newAvailable, newSkipped, prev.useSkippedWordsMode);
-      return {
-        ...prev,
-        learnedWords: newLearned,
-        availableWords: newAvailable,
-        skippedWords: newSkipped,
-        currentWord: nextWord,
-        userInput: '',
-        showSuccess: true,
-      };
+      if (!prev.currentWord) return prev;
+
+      const isCorrect = answer.toLowerCase().trim() === 
+                        prev.currentWord.english.toLowerCase().trim();
+
+      if (isCorrect) {
+        const newLearned = [...prev.learnedWords, prev.currentWord];
+        let newAvailable = prev.availableWords.filter(w => w.id !== prev.currentWord!.id);
+        let newSkipped = prev.skippedWords.filter(w => w.id !== prev.currentWord!.id);
+        
+        const nextWord = getNextWord(newAvailable, newSkipped, prev.useSkippedWordsMode);
+
+        setTimeout(() => {
+          setState(s => ({ ...s, showSuccess: false }));
+        }, 2500);
+
+        return {
+          ...prev,
+          learnedWords: newLearned,
+          availableWords: newAvailable,
+          skippedWords: newSkipped,
+          currentWord: nextWord,
+          userInput: '',
+          showSuccess: true,
+        };
+      }
+
+      return prev;
     });
-    setTimeout(() => {
-      setState(prev => ({ ...prev, showSuccess: false }));
-    }, 2500);
   }, []);
 
   const skipWord = useCallback(() => {
-    if (!state.currentWord) return;
     setState(prev => {
+      if (!prev.currentWord) return prev;
+
       const isAlreadySkipped = prev.skippedWords.some(w => w.id === prev.currentWord!.id);
-      const newSkipped = isAlreadySkipped ? prev.skippedWords : [...prev.skippedWords, prev.currentWord!];
+      const newSkipped = isAlreadySkipped 
+        ? prev.skippedWords 
+        : [...prev.skippedWords, prev.currentWord];
       const newAvailable = prev.availableWords.filter(w => w.id !== prev.currentWord!.id);
       const nextWord = getNextWord(newAvailable, newSkipped, prev.useSkippedWordsMode);
+
       return {
         ...prev,
         skippedWords: newSkipped,
@@ -103,7 +111,9 @@ export const useVocabulary = (initialWords: Word[]) => {
     setState(prev => {
       const newMode = !prev.useSkippedWordsMode;
       if (newMode && prev.skippedWords.length === 0) return prev;
+      
       const nextWord = getNextWord(prev.availableWords, prev.skippedWords, newMode);
+
       return {
         ...prev,
         useSkippedWordsMode: newMode,
