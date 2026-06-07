@@ -9,7 +9,7 @@ interface DictionarySelectorProps {
 
 const getDictionaryLabel = (name: string): string => {
   const labels: { [key: string]: string } = {
-    'words': '📚 Основний словник',
+    'words': '📚 Main',
     'animals': '🐾 Тварини',
     'food': '🍎 Їжа',
     'colors': '🎨 Кольори',
@@ -37,7 +37,7 @@ export const DictionarySelector: React.FC<DictionarySelectorProps> = ({
           className="text-sm font-medium text-on-surface-variant mb-2 block"
           style={{ fontFamily: 'Quicksand' }}
         >
-          Виберіть словник:
+          Select dictionary:
         </label>
         <div className="flex flex-wrap gap-2">
           {dictionaries.map((dict) => (
