@@ -4,19 +4,31 @@ import { Word } from '../types/vocabulary';
 import { WordCard } from './WordCard';
 import { InputField } from './InputField';
 import { Button } from './Button';
-import { Stats } from './Stats';
 import { SuccessNotification } from './SuccessNotification';
 import { WordsList } from './WordsList';
 import { Toggle } from './Toggle';
 
 interface VocabularyAppProps {
   words: Word[];
+  learnedWords: Word[];
+  skippedWords: Word[];
+  onStatsUpdate: (learned: number, skipped: number) => void;
+  onLearnedClick: () => void;
+  onSkippedClick: () => void;
+  showModal: boolean;
+  setShowModal: (show: boolean) => void;
+  modalType: 'learned' | 'skipped';
+  setModalType: (type: 'learned' | 'skipped') => void;
 }
 
-export const VocabularyApp: React.FC<VocabularyAppProps> = ({ words }) => {
-  const [showModal, setShowModal] = useState(false);
-  const [modalType, setModalType] = useState<'learned' | 'skipped'>('learned');
-
+export const VocabularyApp: React.FC<VocabularyAppProps> = ({ 
+  words,
+  onStatsUpdate,
+  showModal,
+  setShowModal,
+  modalType,
+  setModalType,
+}) => {
   const {
     state,
     checkAnswer,
@@ -27,6 +39,11 @@ export const VocabularyApp: React.FC<VocabularyAppProps> = ({ words }) => {
   } = useVocabulary(words);
 
   const stats = getStats();
+
+  // Оновлюємо статистику в App при кожній зміні
+  React.useEffect(() => {
+    onStatsUpdate(stats.learned, stats.skipped);
+  }, [stats.learned, stats.skipped, onStatsUpdate]);
 
   const handleSubmit = () => {
     checkAnswer(state.userInput);
@@ -39,32 +56,10 @@ export const VocabularyApp: React.FC<VocabularyAppProps> = ({ words }) => {
 
   const canToggleSkippedMode = state.skippedWords.length > 0;
 
-  const handleLearnedClick = () => {
-    setModalType('learned');
-    setShowModal(true);
-  };
-
-  const handleSkippedClick = () => {
-    setModalType('skipped');
-    setShowModal(true);
-  };
-
   return (
     <div className="min-h-screen bg-surface flex flex-col">
       {/* Success Notification - у верхній частині */}
       <SuccessNotification show={state.showSuccess} />
-      
-      {/* Header */}
-      <header className="bg-surface-container-low p-4 shadow-soft flex-shrink-0">
-        <div className="max-w-4xl mx-auto flex items-end justify-end">
-          <Stats 
-            learned={stats.learned}
-            skipped={stats.skipped}
-            onLearnedClick={handleLearnedClick}
-            onSkippedClick={handleSkippedClick}
-          />
-        </div>
-      </header>
 
       {/* Main Content */}
       <main className="flex-1 max-w-4xl mx-auto w-full px-gutter py-3 flex flex-col justify-center">
