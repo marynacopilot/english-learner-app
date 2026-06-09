@@ -139,21 +139,33 @@ export const useVocabulary = (initialWords: Word[]) => {
     });
   }, []);
 
-  const toggleSkippedWordsMode = useCallback(() => {
-    setState(prev => {
-      const newMode = !prev.useSkippedWordsMode;
-      if (newMode && prev.skippedWords.length === 0) return prev;
-      
-      const nextWord = getNextWord(prev.availableWords, prev.skippedWords, newMode);
+const toggleSkippedWordsMode = useCallback(() => {
+  setState(prev => {
+    const newMode = !prev.useSkippedWordsMode;
+    if (newMode && prev.skippedWords.length === 0) return prev;
+    
+    // Keep the current word, just change the mode
+    return {
+      ...prev,
+      useSkippedWordsMode: newMode,
+      userInput: '',
+    };
+  });
+}, []);
 
-      return {
-        ...prev,
-        useSkippedWordsMode: newMode,
-        currentWord: nextWord || prev.currentWord,
-        userInput: '',
-      };
-    });
-  }, []);
+  const resetVocabulary = useCallback(() => {
+  setState({
+    allWords: state.allWords,
+    currentWord: null,
+    availableWords: shuffleArray(state.allWords),
+    skippedWords: [],
+    learnedWords: [],
+    userInput: '',
+    showSuccess: false,
+    showSkippedModal: false,
+    useSkippedWordsMode: false,
+  });
+}, [state.allWords]);
 
   const openSkippedModal = useCallback(() => {
     setState(prev => ({ ...prev, showSkippedModal: true }));
