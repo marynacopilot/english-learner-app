@@ -7,6 +7,7 @@ import { Button } from './Button';
 import { SuccessNotification } from './SuccessNotification';
 import { WordsList } from './WordsList';
 import { Toggle } from './Toggle';
+import { resetVocabulary } from './useVocabulary';
 
 interface VocabularyAppProps {
   words: Word[];
@@ -29,14 +30,15 @@ export const VocabularyApp: React.FC<VocabularyAppProps> = ({
   modalType,
   setModalType,
 }) => {
-  const {
-    state,
-    checkAnswer,
-    skipWord,
-    toggleSkippedWordsMode,
-    updateInput,
-    getStats,
-  } = useVocabulary(words);
+const {
+  state,
+  checkAnswer,
+  skipWord,
+  toggleSkippedWordsMode,
+  resetVocabulary,
+  updateInput,
+  getStats,
+} = useVocabulary(words);
 
   const stats = getStats();
 
@@ -114,20 +116,28 @@ export const VocabularyApp: React.FC<VocabularyAppProps> = ({
           )}
 
           {/* Game Over Message */}
-          {isGameOver && (
-            <div className="text-center">
-              <p className="text-3xl mb-3">🎉</p>
-              <p 
-                className="text-xl font-bold text-primary mb-2"
-                style={{ fontFamily: 'Quicksand' }}
-              >
-                Congratulations!
-              </p>
-              <p className="text-on-surface-variant text-sm">
-                You learned all {stats.learned} words!
-              </p>
-            </div>
-          )}
+{/* Game Over Message */}
+{isGameOver && (
+  <div className="text-center">
+    <p className="text-3xl mb-3">🎉</p>
+    <p 
+      className="text-xl font-bold text-primary mb-2"
+      style={{ fontFamily: 'Quicksand' }}
+    >
+      Congratulations!
+    </p>
+    <p className="text-on-surface-variant text-sm mb-6">
+      You learned all {stats.learned} words!
+    </p>
+    <Button
+      onClick={resetVocabulary}
+      variant="primary"
+      size="md"
+    >
+      Start Again
+    </Button>
+  </div>
+)}
         </div>
       </main>
 
