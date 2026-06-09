@@ -155,7 +155,7 @@ export const useVocabulary = (initialWords: Word[]) => {
         
         const nextWord = getNextWord(newAvailable, newSkipped, prev.useSkippedWordsMode);
 
-        // Check if game is over
+        // Check if game is over (all words processed)
         const gameOver = !nextWord && newAvailable.length === 0 && newSkipped.length === 0;
         if (gameOver) {
           setIsCompleted(true);
@@ -191,6 +191,12 @@ export const useVocabulary = (initialWords: Word[]) => {
       
       const newAvailable = prev.availableWords.filter(w => w.id !== prev.currentWord!.id);
       const nextWord = getNextWord(newAvailable, newSkipped, prev.useSkippedWordsMode);
+
+      // Check if game is over (all words processed)
+      const gameOver = !nextWord && newAvailable.length === 0 && newSkipped.length === 0;
+      if (gameOver) {
+        setIsCompleted(true);
+      }
 
       return {
         ...prev,
