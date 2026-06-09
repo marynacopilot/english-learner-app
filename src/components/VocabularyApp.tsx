@@ -1,182 +1,277 @@
-import React, { useState } from 'react';
-import { useVocabulary } from '../hooks/useVocabulary';
-import { Word } from '../types/vocabulary';
-import { WordCard } from './WordCard';
-import { InputField } from './InputField';
-import { Button } from './Button';
-import { SuccessNotification } from './SuccessNotification';
-import { WordsList } from './WordsList';
-import { Toggle } from './Toggle';
+import { useState, useCallback, useEffect } from 'react';
+import { Word, VocabularyState } from '../types/vocabulary';
 
-interface VocabularyAppProps {
-  words: Word[];
+const VOCABULARY_DATA_KEY_PREFIX = 'vocabulary_data_';
+
+interface SavedVocabularyData {
   learnedWords: Word[];
   skippedWords: Word[];
-  onStatsUpdate: (learned: number, skipped: number) => void;
-  onLearnedClick: () => void;
-  onSkippedClick: () => void;
-  showModal: boolean;
-  setShowModal: (show: boolean) => void;
-  modalType: 'learned' | 'skipped';
-  setModalType: (type: 'learned' | 'skipped') => void;
+  availableWords: Word[];
+  isCompleted: boolean;
 }
 
-export const VocabularyApp: React.FC<VocabularyAppProps> = ({ 
-  words,
-  onStatsUpdate,
-  showModal,
-  setShowModal,
-  modalType,
-  setModalType,
-}) => {
-const {
-  state,
-  checkAnswer,
-  skipWord,
-  toggleSkippedWordsMode,
-  resetVocabulary,
-  updateInput,
-  getStats,
-} = useVocabulary(words);
+const getStorageKey = (wordIds: string[]): string => {
+  const hash = wordIds.sort().join('|');
+  return `${VOCABULARY_DATA_KEY_PREFIX}${hash}`;
+};
 
-  const stats = getStats();
-
-  // Оновлюємо статистику в App при кожній зміні
-  React.useEffect(() => {
-    onStatsUpdate(stats.learned, stats.skipped);
-  }, [stats.learned, stats.skipped, onStatsUpdate]);
-
-  const handleSubmit = () => {
-    checkAnswer(state.userInput);
+const loadVocabularyData = (allWords: Word[]): SavedVocabularyData => {
+  try {
+    const key = getStorageKey(allWords.map(w => w.id));
+    const data = localStorage.getItem(key);
+    if (data) {
+      const parsedData = JSON.parse(data);
+      const wordIds = allWords.map(w => w.id);
+      
+      return {
+        learnedWords: (parsedData.learnedWords || []).filter((w: Word) => wordIds.includes(w.id)),
+        skippedWords: (parsedData.skippedWords || []).filter((w: Word) => wordIds.includes(w.id)),
+        availableWords: (parsedData.availableWords || []).filter((w: Word) => wordIds.includes(w.id)),
+        isCompleted: parsedData.isCompleted || false,
+      };
+    }
+  } catch (error) {
+    console.error('Error loading vocabulary data from localStorage:', error);
+  }
+  
+  return {
+    learnedWords: [],
+    skippedWords: [],
+    availableWords: shuffleArray(allWords),
+    isCompleted: false,
   };
+};
 
-const isGameOver = 
-  !state.currentWord && 
-  state.availableWords.length === 0 && 
-  state.skippedWords.length === 0;
+const saveVocabularyData = (allWords: Word[], learnedWords: Word[], skippedWords: Word[], availableWords: Word[], isCompleted: boolean) => {
+  try {
+    const key = getStorageKey(allWords.map(w => w.id));
+    localStorage.setItem(key, JSON.stringify({
+      learnedWords,
+      skippedWords,
+      availableWords,
+      isCompleted,
+    }));
+  } catch (error) {
+    console.error('Error saving vocabulary data to localStorage:', error);
+  }
+};
 
-const isAllWordsLearned = 
-  !state.currentWord && 
-  state.availableWords.length === 0;
+const shuffleArray = <T,>(array: T[]): T[] => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
 
-  const canToggleSkippedMode = state.skippedWords.length > 0;
+const getNextWord = (
+  availableWords: Word[],
+  skippedWords: Word[],
+  useSkippedWordsMode: boolean
+): Word | null => {
+  if (!useSkippedWordsMode) {
+    if (availableWords.length > 0) {
+      return availableWords[Math.floor(Math.random() * availableWords.length)];
+    }
+    return null;
+  }
 
-  return (
-    <div className="min-h-screen bg-surface flex flex-col">
-      {/* Success Notification - у верхній частині */}
-      <SuccessNotification show={state.showSuccess} />
+  if (useSkippedWordsMode) {
+    const combinedWords = [...availableWords, ...skippedWords];
+    if (combinedWords.length > 0) {
+      return combinedWords[Math.floor(Math.random() * combinedWords.length)];
+    }
+    return null;
+  }
 
-      {/* Main Content */}
-      <main className="flex-1 max-w-4xl mx-auto w-full px-gutter py-3 flex flex-col justify-center">
-        <div className="space-y-3">
-          {/* Word Card */}
-          <WordCard word={state.currentWord} />
+  return null;
+};
 
-          {/* Input and Controls */}
-          {!isGameOver && state.currentWord && (
-            <div className="space-y-2">
-              {/* Input Field */}
-              <InputField
-                value={state.userInput}
-                onChange={updateInput}
-                onSubmit={handleSubmit}
-                placeholder="Type English here..."
-                disabled={false}
-              />
+const isAnswerCorrect = (answer: string, word: Word): boolean => {
+  const normalizedAnswer = answer.toLowerCase().trim();
+  
+  if (normalizedAnswer === word.english.toLowerCase().trim()) {
+    return true;
+  }
+  
+  if (word.alternatives?.some(alt => 
+    normalizedAnswer === alt.toLowerCase().trim()
+  )) {
+    return true;
+  }
+  
+  return false;
+};
 
-              {/* Action Buttons */}
-              <div className="flex gap-2 justify-center max-w-2xl mx-auto px-gutter">
-                <Button
-                  onClick={handleSubmit}
-                  disabled={false}
-                  variant="primary"
-                  size="md"
-                >
-                  Check
-                </Button>
-                <Button
-                  onClick={skipWord}
-                  disabled={false}
-                  variant="secondary"
-                  size="md"
-                >
-                  ⏩ Skip
-                </Button>
-              </div>
+export const useVocabulary = (initialWords: Word[]) => {
+  const savedData = loadVocabularyData(initialWords);
+  
+  const [state, setState] = useState<VocabularyState>({
+    allWords: initialWords,
+    currentWord: null,
+    availableWords: savedData.availableWords.length > 0 ? savedData.availableWords : shuffleArray(initialWords),
+    skippedWords: savedData.skippedWords,
+    learnedWords: savedData.learnedWords,
+    userInput: '',
+    showSuccess: false,
+    showSkippedModal: false,
+    useSkippedWordsMode: false,
+  });
 
-              {/* Repeat Skipped Words Toggle */}
-              {canToggleSkippedMode && (
-                <div className="max-w-2xl mx-auto px-gutter flex justify-center">
-                  <Toggle
-                    enabled={state.useSkippedWordsMode}
-                    onChange={toggleSkippedWordsMode}
-                    label="Repeat skipped words"
-                    disabled={false}
-                  />
-                </div>
-              )}
-            </div>
-          )}
+  const [isCompleted, setIsCompleted] = useState(savedData.isCompleted);
 
-{/* Game Over Message - All words learned (no skipped) */}
-{isGameOver && (
-  <div className="text-center">
-    <p className="text-3xl mb-3">🎉</p>
-    <p 
-      className="text-xl font-bold text-primary mb-2"
-      style={{ fontFamily: 'Quicksand' }}
-    >
-      Congratulations!
-    </p>
-    <p className="text-on-surface-variant text-sm mb-6">
-      You learned all {stats.learned} words!
-    </p>
-    <Button
-      onClick={resetVocabulary}
-      variant="primary"
-      size="md"
-    >
-      Start Again
-    </Button>
-  </div>
-)}
+  useEffect(() => {
+    setState(prev => {
+      if (prev.currentWord === null && prev.availableWords.length > 0) {
+        const firstWord = getNextWord(
+          prev.availableWords,
+          prev.skippedWords,
+          prev.useSkippedWordsMode
+        );
+        if (firstWord) {
+          return { ...prev, currentWord: firstWord };
+        }
+      }
+      return prev;
+    });
+  }, []);
 
-{/* Game Over Message - Some words skipped */}
-{isAllWordsLearned && !isGameOver && (
-  <div className="text-center">
-    <p className="text-3xl mb-3">🎉</p>
-    <p 
-      className="text-xl font-bold text-primary mb-2"
-      style={{ fontFamily: 'Quicksand' }}
-    >
-      You've completed all words!
-    </p>
-    <p className="text-on-surface-variant text-sm mb-2">
-      Learned: {stats.learned} | Skipped: {stats.skipped}
-    </p>
-    <p className="text-on-surface-variant text-xs mb-6">
-      Practice the skipped words or start again
-    </p>
-    <Button
-      onClick={resetVocabulary}
-      variant="primary"
-      size="md"
-    >
-      Start Again
-    </Button>
-  </div>
-)}
-        </div>
-      </main>
+  // Save to localStorage whenever state changes
+  useEffect(() => {
+    saveVocabularyData(state.allWords, state.learnedWords, state.skippedWords, state.availableWords, isCompleted);
+  }, [state.learnedWords, state.skippedWords, state.availableWords, state.allWords, isCompleted]);
 
-      {/* Words Modal */}
-      <WordsList
-        words={modalType === 'learned' ? state.learnedWords : state.skippedWords}
-        isOpen={showModal}
-        onClose={() => setShowModal(false)}
-        title={modalType === 'learned' ? 'My Learned Words' : 'My Skipped Words'}
-        type={modalType}
-      />
-    </div>
-  );
+  const checkAnswer = useCallback((answer: string) => {
+    setState(prev => {
+      if (!prev.currentWord) return prev;
+
+      const isCorrect = isAnswerCorrect(answer, prev.currentWord);
+
+      if (isCorrect) {
+        const newLearned = [...prev.learnedWords, prev.currentWord];
+        let newAvailable = prev.availableWords.filter(w => w.id !== prev.currentWord!.id);
+        let newSkipped = prev.skippedWords.filter(w => w.id !== prev.currentWord!.id);
+        
+        const nextWord = getNextWord(newAvailable, newSkipped, prev.useSkippedWordsMode);
+
+        // Check if game is over
+        const gameOver = !nextWord && newAvailable.length === 0 && newSkipped.length === 0;
+        if (gameOver) {
+          setIsCompleted(true);
+        }
+
+        setTimeout(() => {
+          setState(s => ({ ...s, showSuccess: false }));
+        }, 2500);
+
+        return {
+          ...prev,
+          learnedWords: newLearned,
+          availableWords: newAvailable,
+          skippedWords: newSkipped,
+          currentWord: nextWord,
+          userInput: '',
+          showSuccess: true,
+        };
+      }
+
+      return prev;
+    });
+  }, []);
+
+  const skipWord = useCallback(() => {
+    setState(prev => {
+      if (!prev.currentWord) return prev;
+
+      const isAlreadySkipped = prev.skippedWords.some(w => w.id === prev.currentWord!.id);
+      const newSkipped = isAlreadySkipped 
+        ? prev.skippedWords
+        : [...prev.skippedWords, prev.currentWord];
+      
+      const newAvailable = prev.availableWords.filter(w => w.id !== prev.currentWord!.id);
+      const nextWord = getNextWord(newAvailable, newSkipped, prev.useSkippedWordsMode);
+
+      return {
+        ...prev,
+        skippedWords: newSkipped,
+        availableWords: newAvailable,
+        currentWord: nextWord,
+        userInput: '',
+      };
+    });
+  }, []);
+
+  const toggleSkippedWordsMode = useCallback(() => {
+    setState(prev => {
+      const newMode = !prev.useSkippedWordsMode;
+      if (newMode && prev.skippedWords.length === 0) return prev;
+      
+      return {
+        ...prev,
+        useSkippedWordsMode: newMode,
+        userInput: '',
+      };
+    });
+  }, []);
+
+  const resetVocabulary = useCallback(() => {
+    setState({
+      allWords: state.allWords,
+      currentWord: null,
+      availableWords: shuffleArray(state.allWords),
+      skippedWords: [],
+      learnedWords: [],
+      userInput: '',
+      showSuccess: false,
+      showSkippedModal: false,
+      useSkippedWordsMode: false,
+    });
+    
+    setIsCompleted(false);
+    
+    setState(prev => {
+      const firstWord = getNextWord(
+        prev.availableWords,
+        prev.skippedWords,
+        prev.useSkippedWordsMode
+      );
+      if (firstWord) {
+        return { ...prev, currentWord: firstWord };
+      }
+      return prev;
+    });
+  }, [state.allWords]);
+
+  const openSkippedModal = useCallback(() => {
+    setState(prev => ({ ...prev, showSkippedModal: true }));
+  }, []);
+
+  const closeSkippedModal = useCallback(() => {
+    setState(prev => ({ ...prev, showSkippedModal: false }));
+  }, []);
+
+  const updateInput = useCallback((value: string) => {
+    setState(prev => ({ ...prev, userInput: value }));
+  }, []);
+
+  const getStats = useCallback(() => {
+    return {
+      learned: state.learnedWords.length,
+      skipped: state.skippedWords.length,
+    };
+  }, [state.learnedWords.length, state.skippedWords.length]);
+
+  return {
+    state,
+    checkAnswer,
+    skipWord,
+    toggleSkippedWordsMode,
+    resetVocabulary,
+    openSkippedModal,
+    closeSkippedModal,
+    updateInput,
+    getStats,
+    isCompleted,
+  };
 };
