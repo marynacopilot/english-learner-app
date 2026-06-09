@@ -122,6 +122,12 @@ export const useVocabulary = (initialWords: Word[]) => {
   const [isCompleted, setIsCompleted] = useState(savedData.isCompleted);
 
   useEffect(() => {
+    // Don't load first word if vocabulary is completed
+    if (isCompleted) {
+      setState(prev => ({ ...prev, currentWord: null }));
+      return;
+    }
+
     setState(prev => {
       if (prev.currentWord === null && prev.availableWords.length > 0) {
         const firstWord = getNextWord(
@@ -135,7 +141,7 @@ export const useVocabulary = (initialWords: Word[]) => {
       }
       return prev;
     });
-  }, []);
+  }, [isCompleted]);
 
   // Save to localStorage whenever state changes
   useEffect(() => {
