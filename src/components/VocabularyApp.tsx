@@ -42,6 +42,7 @@ export const VocabularyApp: React.FC<VocabularyAppProps> = ({
   setShowModal,
   modalType,
   setModalType,
+  resetVocabularyCallback,
 }) => {
   const {
     state,
