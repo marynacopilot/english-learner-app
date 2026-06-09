@@ -150,13 +150,16 @@ export const VocabularyApp: React.FC<VocabularyAppProps> = ({
               <p className="text-on-surface-variant text-sm mb-6">
                 You learned all {stats.learned} words!
               </p>
-              <Button
-                onClick={resetVocabulary}
-                variant="primary"
-                size="md"
-              >
-                Start Again
-              </Button>
+<Button
+  onClick={() => {
+    resetVocabulary();
+    resetVocabularyCallback();
+  }}
+  variant="primary"
+  size="md"
+>
+  Start Again
+</Button>
             </div>
           )}
 
@@ -176,13 +179,16 @@ export const VocabularyApp: React.FC<VocabularyAppProps> = ({
               <p className="text-on-surface-variant text-xs mb-6">
                 Practice the skipped words or start again
               </p>
-              <Button
-                onClick={resetVocabulary}
-                variant="primary"
-                size="md"
-              >
-                Start Again
-              </Button>
+<Button
+  onClick={() => {
+    resetVocabulary();
+    resetVocabularyCallback();
+  }}
+  variant="primary"
+  size="md"
+>
+  Start Again
+</Button>
             </div>
           )}
         </div>
