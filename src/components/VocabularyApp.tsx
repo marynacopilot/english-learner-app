@@ -58,16 +58,7 @@ export const VocabularyApp: React.FC<VocabularyAppProps> = ({
     checkAnswer(state.userInput);
   };
 
-  const isGameOver = 
-    !state.currentWord && 
-    state.availableWords.length === 0 && 
-    state.skippedWords.length === 0;
-
-  const isAllWordsLearned = 
-    !state.currentWord && 
-    state.availableWords.length === 0;
-
-  // If vocabulary is marked as completed, show congratulations
+  // Show congratulations if vocabulary is completed
   const showCongratulations = isCompleted;
 
   const canToggleSkippedMode = state.skippedWords.length > 0;
@@ -81,7 +72,7 @@ export const VocabularyApp: React.FC<VocabularyAppProps> = ({
       <main className="flex-1 max-w-4xl mx-auto w-full px-gutter py-3 flex flex-col justify-center">
         <div className="space-y-3">
           {/* Word Card */}
-          <WordCard word={state.currentWord} />
+          {!showCongratulations && <WordCard word={state.currentWord} />}
 
           {/* Input and Controls */}
           {!showCongratulations && state.currentWord && (
@@ -140,7 +131,7 @@ export const VocabularyApp: React.FC<VocabularyAppProps> = ({
                 Congratulations!
               </p>
               <p className="text-on-surface-variant text-sm mb-6">
-                You learned all {stats.learned} words!
+                You learned {stats.learned} words!
                 {stats.skipped > 0 && ` (Skipped: ${stats.skipped})`}
               </p>
               <Button
