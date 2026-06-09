@@ -57,10 +57,15 @@ export const VocabularyApp: React.FC<VocabularyAppProps> = ({
 
   const stats = getStats();
 
-  // Оновлюємо статистику в App при кожній зміні
   React.useEffect(() => {
     onStatsUpdate(stats.learned, stats.skipped);
   }, [stats.learned, stats.skipped, onStatsUpdate]);
+
+  const handleReset = () => {
+    resetVocabulary();
+    resetVocabularyCallback();
+    onStatsUpdate(0, 0);
+  };
 
   const handleSubmit = () => {
     checkAnswer(state.userInput);
