@@ -170,7 +170,7 @@ const wasCompleted = isCompleted;
           )}
 
           {/* Game Over Message - Some words skipped */}
-          {isAllWordsLearned && !isGameOver && !wasCompleted && (
+         {isAllWordsLearned && !isGameOver && (
             <div className="text-center">
               <p className="text-3xl mb-3">🎉</p>
               <p 
