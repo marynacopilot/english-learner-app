@@ -186,33 +186,46 @@ export const useVocabulary = (initialWords: Word[]) => {
     });
   }, []);
 
-  const skipWord = useCallback(() => {
-    setState(prev => {
-      if (!prev.currentWord) return prev;
+const skipWord = useCallback(() => {
+  setState(prev => {
+    if (!prev.currentWord) return prev;
 
-      const isAlreadySkipped = prev.skippedWords.some(w => w.id === prev.currentWord!.id);
-      const newSkipped = isAlreadySkipped 
-        ? prev.skippedWords
-        : [...prev.skippedWords, prev.currentWord];
-      
-      const newAvailable = prev.availableWords.filter(w => w.id !== prev.currentWord!.id);
-      const nextWord = getNextWord(newAvailable, newSkipped, prev.useSkippedWordsMode);
-
-      // Check if game is over (all words processed)
-      const gameOver = !nextWord && newAvailable.length === 0 && newSkipped.length === 0;
-      if (gameOver) {
-        setIsCompleted(true);
-      }
-
+    const isAlreadySkipped = prev.skippedWords.some(w => w.id === prev.currentWord!.id);
+    const newSkipped = isAlreadySkipped 
+      ? prev.skippedWords
+      : [...prev.skippedWords, prev.currentWord];
+    
+    const newAvailable = prev.availableWords.filter(w => w.id !== prev.currentWord!.id);
+    
+    // If there are no more available words but we have skipped words and we're not in skipped mode, complete
+    if (newAvailable.length === 0 && newSkipped.length > 0 && !prev.useSkippedWordsMode) {
+      setIsCompleted(true);
       return {
         ...prev,
         skippedWords: newSkipped,
         availableWords: newAvailable,
-        currentWord: nextWord,
+        currentWord: null,
         userInput: '',
       };
-    });
-  }, []);
+    }
+
+    const nextWord = getNextWord(newAvailable, newSkipped, prev.useSkippedWordsMode);
+
+    // Check if game is over (all words processed in skipped mode)
+    const gameOver = !nextWord && newAvailable.length === 0 && newSkipped.length === 0;
+    if (gameOver) {
+      setIsCompleted(true);
+    }
+
+    return {
+      ...prev,
+      skippedWords: newSkipped,
+      availableWords: newAvailable,
+      currentWord: nextWord,
+      userInput: '',
+    };
+  });
+}, []);
 
   const toggleSkippedWordsMode = useCallback(() => {
     setState(prev => {
