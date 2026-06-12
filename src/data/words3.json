@@ -218,5 +218,228 @@
     "ukrainian": "Новий",
     "english": "new",
     "emoji": ""
+  },
+    {
+    "id": "48",
+    "ukrainian": "Один",
+    "english": "one",
+    "emoji": "1️⃣"
+  },
+  {
+    "id": "49",
+    "ukrainian": "Два",
+    "english": "two",
+    "emoji": "2️⃣"
+  },
+  {
+    "id": "50",
+    "ukrainian": "Три",
+    "english": "three",
+    "emoji": "3️⃣"
+  },
+  {
+    "id": "51",
+    "ukrainian": "Чотири",
+    "english": "four",
+    "emoji": "4️⃣"
+  },
+  {
+    "id": "52",
+    "ukrainian": "П'ять",
+    "english": "five",
+    "emoji": "5️⃣"
+  },
+  {
+    "id": "53",
+    "ukrainian": "Шість",
+    "english": "six",
+    "emoji": "6️⃣"
+  },
+  {
+    "id": "54",
+    "ukrainian": "Сім",
+    "english": "seven",
+    "emoji": "7️⃣"
+  },
+  {
+    "id": "55",
+    "ukrainian": "Вісім",
+    "english": "eight",
+    "emoji": "8️⃣"
+  },
+  {
+    "id": "56",
+    "ukrainian": "Дев'ять",
+    "english": "nine",
+    "emoji": "9️⃣"
+  },
+  {
+    "id": "57",
+    "ukrainian": "Десять",
+    "english": "ten",
+    "emoji": "🔟"
+  },
+    {
+    "id": "57",
+    "ukrainian": "Нуль",
+    "english": "zero",
+    "emoji": ""
+  },
+    {
+    "id": "58",
+    "ukrainian": "Понеділок",
+    "english": "Monday",
+    "emoji": ""
+  },
+  {
+    "id": "59",
+    "ukrainian": "Вівторок",
+    "english": "Tuesday",
+    "emoji": ""
+  },
+  {
+    "id": "60",
+    "ukrainian": "Середа",
+    "english": "Wednesday",
+    "emoji": ""
+  },
+  {
+    "id": "61",
+    "ukrainian": "Четвер",
+    "english": "Thursday",
+    "emoji": ""
+  },
+  {
+    "id": "62",
+    "ukrainian": "П'ятниця",
+    "english": "Friday",
+    "emoji": ""
+  },
+  {
+    "id": "63",
+    "ukrainian": "Субота",
+    "english": "Saturday",
+    "emoji": ""
+  },
+  {
+    "id": "64",
+    "ukrainian": "Неділя",
+    "english": "Sunday",
+    "emoji": ""
+  },
+   {
+    "id": "65",
+    "ukrainian": "Січень",
+    "english": "January",
+    "emoji": ""
+  },
+  {
+    "id": "66",
+    "ukrainian": "Лютий",
+    "english": "February",
+    "emoji": ""
+  },
+  {
+    "id": "67",
+    "ukrainian": "Березень",
+    "english": "March",
+    "emoji": ""
+  },
+  {
+    "id": "68",
+    "ukrainian": "Квітень",
+    "english": "April",
+    "emoji": ""
+  },
+  {
+    "id": "69",
+    "ukrainian": "Травень",
+    "english": "May",
+    "emoji": ""
+  },
+  {
+    "id": "70",
+    "ukrainian": "Червень",
+    "english": "June",
+    "emoji": ""
+  },
+  {
+    "id": "71",
+    "ukrainian": "Липень",
+    "english": "July",
+    "emoji": ""
+  },
+  {
+    "id": "72",
+    "ukrainian": "Серпень",
+    "english": "August",
+    "emoji": ""
+  },
+  {
+    "id": "73",
+    "ukrainian": "Вересень",
+    "english": "September",
+    "emoji": ""
+  },
+  {
+    "id": "74",
+    "ukrainian": "Жовтень",
+    "english": "October",
+    "emoji": ""
+  },
+  {
+    "id": "75",
+    "ukrainian": "Листопад",
+    "english": "November",
+    "emoji": ""
+  },
+  {
+    "id": "76",
+    "ukrainian": "Грудень",
+    "english": "December",
+    "emoji": ""
+  },
+  {
+    "id": "77",
+    "ukrainian": "Весна",
+    "english": "spring",
+    "emoji": "🌸"
+  },
+  {
+    "id": "78",
+    "ukrainian": "Літо",
+    "english": "summer",
+    "emoji": "☀️"
+  },
+  {
+    "id": "79",
+    "ukrainian": "Осінь",
+    "english": "autumn",
+    "emoji": "🍂",
+    "alternatives": ["fall"]
+  },
+  {
+    "id": "80",
+    "ukrainian": "Зима",
+    "english": "winter",
+    "emoji": "❄️"
+  },
+    {
+    "id": "207",
+    "ukrainian": "Хороший",
+    "english": "good",
+    "emoji": ""
+  },
+      {
+    "id": "207",
+    "ukrainian": "Кращий",
+    "english": "better",
+    "emoji": ""
+  },
+        {
+    "id": "207",
+    "ukrainian": "Найращий",
+    "english": "best",
+    "emoji": ""
   }
 ]
