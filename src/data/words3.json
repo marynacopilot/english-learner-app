@@ -275,12 +275,6 @@
     "emoji": "🔟"
   },
     {
-    "id": "57",
-    "ukrainian": "Нуль",
-    "english": "zero",
-    "emoji": ""
-  },
-    {
     "id": "58",
     "ukrainian": "Понеділок",
     "english": "Monday",
@@ -442,4 +436,10 @@
   "ukrainian": "Миша",
   "english": "mouse"
 },
+      {
+    "id": "85",
+    "ukrainian": "Нуль",
+    "english": "zero",
+    "emoji": ""
+  }
 ]
