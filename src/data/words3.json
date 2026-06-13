@@ -84,5 +84,20 @@
   { "id": "83", "ukrainian": "Найкращий", "english": "best", "emoji": "" },
   { "id": "84", "ukrainian": "Миша", "english": "mouse" },
   { "id": "85", "ukrainian": "Нуль", "english": "zero", "emoji": "" },
-  { "id": "86", "ukrainian": "Муха", "english": "fly", "emoji": "" }
+  { "id": "86", "ukrainian": "Муха", "english": "fly", "emoji": "" },
+  { "id": "87", "ukrainian": "Брат", "english": "brother", "emoji": "" },
+  { "id": "88", "ukrainian": "Сестра", "english": "sister", "emoji": "" },
+  { "id": "89", "ukrainian": "Друг / подруга", "english": "friend", "emoji": "" },
+  { "id": "90", "ukrainian": "Школа", "english": "school", "emoji": "🏫" },
+  { "id": "91", "ukrainian": "Книга", "english": "book", "emoji": "📚" },
+  { "id": "92", "ukrainian": "Їжа", "english": "food", "emoji": "" },
+  { "id": "93", "ukrainian": "Іграшка", "english": "toy", "emoji": "" },
+  { "id": "94", "ukrainian": "Місяць", "english": "moon", "emoji": "🌙" },
+  { "id": "95", "ukrainian": "Зірка", "english": "star", "emoji": "⭐" },
+  { "id": "96", "ukrainian": "Вода", "english": "water", "emoji": "💧" },
+  { "id": "97", "ukrainian": "Яблуко", "english": "apple", "emoji": "🍎" },
+  { "id": "98", "ukrainian": "Квітка", "english": "flower", "emoji": "🌼" },
+  { "id": "99", "ukrainian": "Нога", "english": "leg", "emoji": "" },
+  { "id": "100", "ukrainian": "Рука", "english": "hand", "emoji": "" },
+  { "id": "101", "ukrainian": "Риба", "english": "fish", "emoji": "🐟" }
 ]
