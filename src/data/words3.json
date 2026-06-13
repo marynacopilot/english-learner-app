@@ -70,11 +70,6 @@
   "english": "cat"
 },
       {
-  "id": "14",
-  "ukrainian": "Миша",
-  "english": "mouse"
-},
-      {
   "id": "15",
   "ukrainian": "Олівець",
   "english": "pencil"
@@ -441,5 +436,10 @@
     "ukrainian": "Найкращий",
     "english": "best",
     "emoji": ""
-  }
+  },
+        {
+  "id": "84",
+  "ukrainian": "Миша",
+  "english": "mouse"
+},
 ]
