@@ -1,95 +1,22 @@
 [
-  {
-  "id": "1",
-  "ukrainian": "Вчитель",
-  "english": "teacher"
-},
-{
-  "id": "2",
-  "ukrainian": "Качка",
-  "english": "duck"
-},
-{
-  "id": "3",
-  "ukrainian": "Восьминіг",
-  "english": "octopus"
-},
-{
-  "id": "4",
-  "ukrainian": "Будинок",
-  "english": "house"
-},
-{
-  "id": "5",
-  "ukrainian": "Небо",
-  "english": "sky"
-},
-{
-  "id": "6",
-  "ukrainian": "Привіт",
-  "english": "hello"
-},
-{
-  "id": "7",
-  "ukrainian": "Кошеня",
-  "english": "kitten",
-  "alternatives": ["kitty"]
-},
-{
-  "id": "8",
-  "ukrainian": "Коричневий",
-  "english": "brown"
-},
-{
-  "id": "9",
-  "ukrainian": "Сонячно",
-  "english": "sunny"
-},
-{
-  "id": "10",
-  "ukrainian": "Поганий",
-  "english": "bad"
-},
-  {
-  "id": "11",
-  "ukrainian": "Метелик",
-  "english": "butterfly"
-},
-  {
-  "id": "12",
-  "ukrainian": "Собака",
-  "english": "dog"
-},
-    {
-  "id": "13",
-  "ukrainian": "Літати",
-  "english": "fly"
-},
-    {
-  "id": "14",
-  "ukrainian": "Кіт",
-  "english": "cat"
-},
-      {
-  "id": "15",
-  "ukrainian": "Олівець",
-  "english": "pencil"
-},
-        {
-  "id": "16",
-  "ukrainian": "Телефон",
-  "english": "phone"
-},
-          {
-  "id": "17",
-  "ukrainian": "Папір",
-  "english": "paper"
-},
-            {
-  "id": "18",
-  "ukrainian": "Дерево",
-  "english": "tree"
-},
+  { "id": "1", "ukrainian": "Вчитель", "english": "teacher" },
+  { "id": "2", "ukrainian": "Качка", "english": "duck" },
+  { "id": "3", "ukrainian": "Восьминіг", "english": "octopus" },
+  { "id": "4", "ukrainian": "Будинок", "english": "house" },
+  { "id": "5", "ukrainian": "Небо", "english": "sky" },
+  { "id": "6", "ukrainian": "Привіт", "english": "hello" },
+  { "id": "7", "ukrainian": "Кошеня", "english": "kitten", "alternatives": ["kitty"] },
+  { "id": "8", "ukrainian": "Коричневий", "english": "brown" },
+  { "id": "9", "ukrainian": "Сонячно", "english": "sunny" },
+  { "id": "10", "ukrainian": "Поганий", "english": "bad" },
+  { "id": "11", "ukrainian": "Метелик", "english": "butterfly" },
+  { "id": "12", "ukrainian": "Собака", "english": "dog" },
+  { "id": "13", "ukrainian": "Літати", "english": "fly" },
+  { "id": "14", "ukrainian": "Кіт", "english": "cat" },
+  { "id": "15", "ukrainian": "Олівець", "english": "pencil" },
+  { "id": "16", "ukrainian": "Телефон", "english": "phone" },
+  { "id": "17", "ukrainian": "Папір", "english": "paper" },
+  { "id": "18", "ukrainian": "Дерево", "english": "tree" },
   { "id": "19", "ukrainian": "Кімната", "english": "room", "emoji": "" },
   { "id": "20", "ukrainian": "Двері", "english": "door", "emoji": "🚪" },
   { "id": "21", "ukrainian": "Підлога", "english": "floor", "emoji": "" },
@@ -100,353 +27,62 @@
   { "id": "26", "ukrainian": "Він", "english": "he", "emoji": "" },
   { "id": "27", "ukrainian": "Вона", "english": "she", "emoji": "" },
   { "id": "28", "ukrainian": "Ми", "english": "we", "emoji": "" },
-  {
-    "id": "29",
-    "ukrainian": "Їсти",
-    "english": "eat",
-    "emoji": "🍽️"
-  },
-  {
-    "id": "30",
-    "ukrainian": "Пити",
-    "english": "drink",
-    "emoji": "🥤"
-  },
-  {
-    "id": "31",
-    "ukrainian": "Бігти",
-    "english": "run",
-    "emoji": ""
-  },
-  {
-    "id": "32",
-    "ukrainian": "Ходити пішки / Гуляти",
-    "english": "walk",
-    "emoji": ""
-  },
-  {
-    "id": "33",
-    "ukrainian": "Стрибати",
-    "english": "jump",
-    "emoji": ""
-  },
-  {
-    "id": "34",
-    "ukrainian": "Плавати",
-    "english": "swim",
-    "emoji": "🏊"
-  },
-  {
-    "id": "35",
-    "ukrainian": "Спати",
-    "english": "sleep",
-    "emoji": "😴"
-  },
-  {
-    "id": "36",
-    "ukrainian": "Читати",
-    "english": "read",
-    "emoji": "📖"
-  },
-  {
-    "id": "37",
-    "ukrainian": "Писати",
-    "english": "write",
-    "emoji": "✍️"
-  },
-  {
-    "id": "38",
-    "ukrainian": "Говорити",
-    "english": "speak",
-    "emoji": "🗣️",
-    "alternatives": ["talk"]
-  },
-  {
-    "id": "39",
-    "ukrainian": "Слухати",
-    "english": "listen",
-    "emoji": "👂"
-  },
-  {
-    "id": "40",
-    "ukrainian": "Дивитися",
-    "english": "watch",
-    "emoji": "👀"
-  },
-  {
-    "id": "41",
-    "ukrainian": "Грати",
-    "english": "play",
-    "emoji": "🎮"
-  },
-  {
-    "id": "42",
-    "ukrainian": "Малювати",
-    "english": "draw",
-    "emoji": "🎨"
-  },
-  {
-    "id": "43",
-    "ukrainian": "Танцювати",
-    "english": "dance",
-    "emoji": ""
-  },
-    {
-    "id": "44",
-    "ukrainian": "Голодний",
-    "english": "hungry",
-    "emoji": ""
-  },
-    {
-    "id": "45",
-    "ukrainian": "Швидкий",
-    "english": "fast",
-    "emoji": ""
-  },
-  {
-    "id": "46",
-    "ukrainian": "Повільний",
-    "english": "slow",
-    "emoji": ""
-  },
-  {
-    "id": "47",
-    "ukrainian": "Новий",
-    "english": "new",
-    "emoji": ""
-  },
-    {
-    "id": "48",
-    "ukrainian": "Один",
-    "english": "one",
-    "emoji": "1️⃣"
-  },
-  {
-    "id": "49",
-    "ukrainian": "Два",
-    "english": "two",
-    "emoji": "2️⃣"
-  },
-  {
-    "id": "50",
-    "ukrainian": "Три",
-    "english": "three",
-    "emoji": "3️⃣"
-  },
-  {
-    "id": "51",
-    "ukrainian": "Чотири",
-    "english": "four",
-    "emoji": "4️⃣"
-  },
-  {
-    "id": "52",
-    "ukrainian": "П'ять",
-    "english": "five",
-    "emoji": "5️⃣"
-  },
-  {
-    "id": "53",
-    "ukrainian": "Шість",
-    "english": "six",
-    "emoji": "6️⃣"
-  },
-  {
-    "id": "54",
-    "ukrainian": "Сім",
-    "english": "seven",
-    "emoji": "7️⃣"
-  },
-  {
-    "id": "55",
-    "ukrainian": "Вісім",
-    "english": "eight",
-    "emoji": "8️⃣"
-  },
-  {
-    "id": "56",
-    "ukrainian": "Дев'ять",
-    "english": "nine",
-    "emoji": "9️⃣"
-  },
-  {
-    "id": "57",
-    "ukrainian": "Десять",
-    "english": "ten",
-    "emoji": "🔟"
-  },
-    {
-    "id": "58",
-    "ukrainian": "Понеділок",
-    "english": "Monday",
-    "emoji": ""
-  },
-  {
-    "id": "59",
-    "ukrainian": "Вівторок",
-    "english": "Tuesday",
-    "emoji": ""
-  },
-  {
-    "id": "60",
-    "ukrainian": "Середа",
-    "english": "Wednesday",
-    "emoji": ""
-  },
-  {
-    "id": "61",
-    "ukrainian": "Четвер",
-    "english": "Thursday",
-    "emoji": ""
-  },
-  {
-    "id": "62",
-    "ukrainian": "П'ятниця",
-    "english": "Friday",
-    "emoji": ""
-  },
-  {
-    "id": "63",
-    "ukrainian": "Субота",
-    "english": "Saturday",
-    "emoji": ""
-  },
-  {
-    "id": "64",
-    "ukrainian": "Неділя",
-    "english": "Sunday",
-    "emoji": ""
-  },
-   {
-    "id": "65",
-    "ukrainian": "Січень",
-    "english": "January",
-    "emoji": ""
-  },
-  {
-    "id": "66",
-    "ukrainian": "Лютий",
-    "english": "February",
-    "emoji": ""
-  },
-  {
-    "id": "67",
-    "ukrainian": "Березень",
-    "english": "March",
-    "emoji": ""
-  },
-  {
-    "id": "68",
-    "ukrainian": "Квітень",
-    "english": "April",
-    "emoji": ""
-  },
-  {
-    "id": "69",
-    "ukrainian": "Травень",
-    "english": "May",
-    "emoji": ""
-  },
-  {
-    "id": "70",
-    "ukrainian": "Червень",
-    "english": "June",
-    "emoji": ""
-  },
-  {
-    "id": "71",
-    "ukrainian": "Липень",
-    "english": "July",
-    "emoji": ""
-  },
-  {
-    "id": "72",
-    "ukrainian": "Серпень",
-    "english": "August",
-    "emoji": ""
-  },
-  {
-    "id": "73",
-    "ukrainian": "Вересень",
-    "english": "September",
-    "emoji": ""
-  },
-  {
-    "id": "74",
-    "ukrainian": "Жовтень",
-    "english": "October",
-    "emoji": ""
-  },
-  {
-    "id": "75",
-    "ukrainian": "Листопад",
-    "english": "November",
-    "emoji": ""
-  },
-  {
-    "id": "76",
-    "ukrainian": "Грудень",
-    "english": "December",
-    "emoji": ""
-  },
-  {
-    "id": "77",
-    "ukrainian": "Весна",
-    "english": "spring",
-    "emoji": "🌸"
-  },
-  {
-    "id": "78",
-    "ukrainian": "Літо",
-    "english": "summer",
-    "emoji": "☀️"
-  },
-  {
-    "id": "79",
-    "ukrainian": "Осінь",
-    "english": "autumn",
-    "emoji": "🍂",
-    "alternatives": ["fall"]
-  },
-  {
-    "id": "80",
-    "ukrainian": "Зима",
-    "english": "winter",
-    "emoji": "❄️"
-  },
-    {
-    "id": "81",
-    "ukrainian": "Хороший",
-    "english": "good",
-    "emoji": ""
-  },
-      {
-    "id": "82",
-    "ukrainian": "Кращий",
-    "english": "better",
-    "emoji": ""
-  },
-        {
-    "id": "83",
-    "ukrainian": "Найкращий",
-    "english": "best",
-    "emoji": ""
-  },
-        {
-  "id": "84",
-  "ukrainian": "Миша",
-  "english": "mouse"
-},
-      {
-    "id": "85",
-    "ukrainian": "Нуль",
-    "english": "zero",
-    "emoji": ""
-  },
-        {
-    "id": "86",
-    "ukrainian": "Муха",
-    "english": "fly",
-    "emoji": ""
-  }
+  { "id": "29", "ukrainian": "Їсти", "english": "eat", "emoji": "🍽️" },
+  { "id": "30", "ukrainian": "Пити", "english": "drink", "emoji": "🥤" },
+  { "id": "31", "ukrainian": "Бігти", "english": "run", "emoji": "" },
+  { "id": "32", "ukrainian": "Ходити пішки / Гуляти", "english": "walk", "emoji": "" },
+  { "id": "33", "ukrainian": "Стрибати", "english": "jump", "emoji": "" },
+  { "id": "34", "ukrainian": "Плавати", "english": "swim", "emoji": "🏊" },
+  { "id": "35", "ukrainian": "Спати", "english": "sleep", "emoji": "😴" },
+  { "id": "36", "ukrainian": "Читати", "english": "read", "emoji": "📖" },
+  { "id": "37", "ukrainian": "Писати", "english": "write", "emoji": "✍️" },
+  { "id": "38", "ukrainian": "Говорити", "english": "speak", "emoji": "🗣️", "alternatives": ["talk"] },
+  { "id": "39", "ukrainian": "Слухати", "english": "listen", "emoji": "👂" },
+  { "id": "40", "ukrainian": "Дивитися", "english": "watch", "emoji": "👀" },
+  { "id": "41", "ukrainian": "Грати", "english": "play", "emoji": "🎮" },
+  { "id": "42", "ukrainian": "Малювати", "english": "draw", "emoji": "🎨" },
+  { "id": "43", "ukrainian": "Танцювати", "english": "dance", "emoji": "" },
+  { "id": "44", "ukrainian": "Голодний", "english": "hungry", "emoji": "" },
+  { "id": "45", "ukrainian": "Швидкий", "english": "fast", "emoji": "" },
+  { "id": "46", "ukrainian": "Повільний", "english": "slow", "emoji": "" },
+  { "id": "47", "ukrainian": "Новий", "english": "new", "emoji": "" },
+  { "id": "48", "ukrainian": "Один", "english": "one", "emoji": "1️⃣" },
+  { "id": "49", "ukrainian": "Два", "english": "two", "emoji": "2️⃣" },
+  { "id": "50", "ukrainian": "Три", "english": "three", "emoji": "3️⃣" },
+  { "id": "51", "ukrainian": "Чотири", "english": "four", "emoji": "4️⃣" },
+  { "id": "52", "ukrainian": "П'ять", "english": "five", "emoji": "5️⃣" },
+  { "id": "53", "ukrainian": "Шість", "english": "six", "emoji": "6️⃣" },
+  { "id": "54", "ukrainian": "Сім", "english": "seven", "emoji": "7️⃣" },
+  { "id": "55", "ukrainian": "Вісім", "english": "eight", "emoji": "8️⃣" },
+  { "id": "56", "ukrainian": "Дев'ять", "english": "nine", "emoji": "9️⃣" },
+  { "id": "57", "ukrainian": "Десять", "english": "ten", "emoji": "🔟" },
+  { "id": "58", "ukrainian": "Понеділок", "english": "Monday", "emoji": "" },
+  { "id": "59", "ukrainian": "Вівторок", "english": "Tuesday", "emoji": "" },
+  { "id": "60", "ukrainian": "Середа", "english": "Wednesday", "emoji": "" },
+  { "id": "61", "ukrainian": "Четвер", "english": "Thursday", "emoji": "" },
+  { "id": "62", "ukrainian": "П'ятниця", "english": "Friday", "emoji": "" },
+  { "id": "63", "ukrainian": "Субота", "english": "Saturday", "emoji": "" },
+  { "id": "64", "ukrainian": "Неділя", "english": "Sunday", "emoji": "" },
+  { "id": "65", "ukrainian": "Січень", "english": "January", "emoji": "" },
+  { "id": "66", "ukrainian": "Лютий", "english": "February", "emoji": "" },
+  { "id": "67", "ukrainian": "Березень", "english": "March", "emoji": "" },
+  { "id": "68", "ukrainian": "Квітень", "english": "April", "emoji": "" },
+  { "id": "69", "ukrainian": "Травень", "english": "May", "emoji": "" },
+  { "id": "70", "ukrainian": "Червень", "english": "June", "emoji": "" },
+  { "id": "71", "ukrainian": "Липень", "english": "July", "emoji": "" },
+  { "id": "72", "ukrainian": "Серпень", "english": "August", "emoji": "" },
+  { "id": "73", "ukrainian": "Вересень", "english": "September", "emoji": "" },
+  { "id": "74", "ukrainian": "Жовтень", "english": "October", "emoji": "" },
+  { "id": "75", "ukrainian": "Листопад", "english": "November", "emoji": "" },
+  { "id": "76", "ukrainian": "Грудень", "english": "December", "emoji": "" },
+  { "id": "77", "ukrainian": "Весна", "english": "spring", "emoji": "🌸" },
+  { "id": "78", "ukrainian": "Літо", "english": "summer", "emoji": "☀️" },
+  { "id": "79", "ukrainian": "Осінь", "english": "autumn", "emoji": "🍂", "alternatives": ["fall"] },
+  { "id": "80", "ukrainian": "Зима", "english": "winter", "emoji": "❄️" },
+  { "id": "81", "ukrainian": "Хороший", "english": "good", "emoji": "" },
+  { "id": "82", "ukrainian": "Кращий", "english": "better", "emoji": "" },
+  { "id": "83", "ukrainian": "Найкращий", "english": "best", "emoji": "" },
+  { "id": "84", "ukrainian": "Миша", "english": "mouse" },
+  { "id": "85", "ukrainian": "Нуль", "english": "zero", "emoji": "" },
+  { "id": "86", "ukrainian": "Муха", "english": "fly", "emoji": "" }
 ]
