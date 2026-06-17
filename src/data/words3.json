@@ -99,5 +99,60 @@
   { "id": "98", "ukrainian": "Квітка", "english": "flower", "emoji": "🌼" },
   { "id": "99", "ukrainian": "Нога", "english": "leg", "emoji": "" },
   { "id": "100", "ukrainian": "Рука", "english": "hand", "emoji": "" },
-  { "id": "101", "ukrainian": "Риба", "english": "fish", "emoji": "🐟" }
+  { "id": "101", "ukrainian": "Риба", "english": "fish", "emoji": "🐟" },
+  { "id": "102", "ukrainian": "Щасливий", "english": "happy", "emoji": "" },
+  { "id": "103", "ukrainian": "Сумний", "english": "sad", "emoji": "" },
+  { "id": "104", "ukrainian": "Брудний", "english": "dirty", "emoji": "" },
+  { "id": "105", "ukrainian": "Чистий", "english": "clean", "emoji": "" },
+  { "id": "106", "ukrainian": "Смішний", "english": "funny", "emoji": "" },
+  { "id": "107", "ukrainian": "Серйозний", "english": "serious", "emoji": "" },
+
+  { "id": "108", "ukrainian": "І", "english": "and", "emoji": "" },
+  { "id": "109", "ukrainian": "Але", "english": "but", "emoji": "" },
+  { "id": "110", "ukrainian": "Або", "english": "or", "emoji": "" },
+
+  { "id": "111", "ukrainian": "Кажан", "english": "bat", "emoji": "🦇" },
+  { "id": "112", "ukrainian": "Щур", "english": "rat", "emoji": "🐀" },
+  { "id": "113", "ukrainian": "Цуценя", "english": "puppy", "emoji": "🐶" },
+  { "id": "114", "ukrainian": "Тигр", "english": "tiger", "emoji": "🐯" },
+  { "id": "115", "ukrainian": "Лев", "english": "lion", "emoji": "🦁" },
+  { "id": "116", "ukrainian": "Крокодил", "english": "crocodile", "emoji": "🐊" },
+  { "id": "117", "ukrainian": "Мавпа", "english": "monkey", "emoji": "🐵" },
+
+  { "id": "118", "ukrainian": "Ручка", "english": "pen", "emoji": "🖊️" },
+  { "id": "119", "ukrainian": "Лампа", "english": "lamp", "emoji": "" },
+  { "id": "120", "ukrainian": "Годинник", "english": "clock", "emoji": "🕒" },
+  { "id": "121", "ukrainian": "Годинник (наручний)", "english": "watch", "emoji": "⌚" },
+  { "id": "122", "ukrainian": "Стіл", "english": "table", "emoji": "" },
+  { "id": "123", "ukrainian": "Стілець", "english": "chair", "emoji": "🪑" },
+  { "id": "124", "ukrainian": "Крісло", "english": "armchair", "emoji": "" },
+  { "id": "125", "ukrainian": "Ліжко", "english": "bed", "emoji": "🛏️" },
+
+  { "id": "126", "ukrainian": "Сонце", "english": "sun", "emoji": "☀️" },
+  { "id": "127", "ukrainian": "Парасолька", "english": "umbrella", "emoji": "☂️" },
+  { "id": "128", "ukrainian": "Хмарно", "english": "cloudy", "emoji": "☁️" },
+  { "id": "129", "ukrainian": "Сніжно", "english": "snowy", "emoji": "❄️" },
+  { "id": "130", "ukrainian": "Дощ", "english": "rain", "emoji": "🌧️" },
+
+  { "id": "131", "ukrainian": "Обличчя", "english": "face", "emoji": "" },
+  { "id": "132", "ukrainian": "Очі", "english": "eyes", "emoji": "👀" },
+  { "id": "133", "ukrainian": "Рот", "english": "mouth", "emoji": "" },
+  { "id": "134", "ukrainian": "Ніс", "english": "nose", "emoji": "👃" },
+  { "id": "135", "ukrainian": "Вуха", "english": "ears", "emoji": "" },
+  { "id": "136", "ukrainian": "Зуб", "english": "tooth", "emoji": "🦷" },
+  { "id": "137", "ukrainian": "Зуби", "english": "teeth", "emoji": "🦷🦷🦷" },
+  { "id": "138", "ukrainian": "Волосся", "english": "hair", "emoji": "💇" },
+  { "id": "139", "ukrainian": "Губи", "english": "lips", "emoji": "💋" },
+  { "id": "140", "ukrainian": "Брови", "english": "brows", "emoji": "" },
+
+  { "id": "141", "ukrainian": "Немовля", "english": "baby", "emoji": "" },
+  { "id": "142", "ukrainian": "Дочка", "english": "daughter", "emoji": "" },
+
+  { "id": "143", "ukrainian": "Музика", "english": "music", "emoji": "🎵" },
+  { "id": "144", "ukrainian": "Пісня", "english": "song", "emoji": "" },
+  { "id": "145", "ukrainian": "Співати", "english": "sing", "emoji": "" },
+
+  { "id": "146", "ukrainian": "Майданчик", "english": "playground", "emoji": "🛝" },
+  { "id": "147", "ukrainian": "Червоний", "english": "red", "emoji": "🔴" },
+  { "id": "148", "ukrainian": "Гроші", "english": "money", "emoji": "💰" }
 ]
