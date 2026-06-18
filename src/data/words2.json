@@ -136,6 +136,51 @@
   { "id": "325", "ukrainian": "Коробка", "english": "box" },
   { "id": "326", "ukrainian": "Ключ", "english": "key" },
   { "id": "327", "ukrainian": "Карта", "english": "map" },
-  { "id": "328", "ukrainian": "Міст", "english": "bridge" }
+  { "id": "328", "ukrainian": "Міст", "english": "bridge" },
 
+  { "id": "329", "ukrainian": "Сніданок", "english": "breakfast", "emoji": "" },
+  { "id": "330", "ukrainian": "Обід", "english": "lunch", "emoji": "" },
+  { "id": "331", "ukrainian": "Вечеря", "english": "dinner", "emoji": "" },
+  { "id": "332", "ukrainian": "Печиво", "english": "cookie", "emoji": "🍪" },
+  { "id": "333", "ukrainian": "Цукерка", "english": "candy", "emoji": "🍬" },
+  { "id": "334", "ukrainian": "Морозиво", "english": "ice cream", "emoji": "🍦" },
+  { "id": "335", "ukrainian": "Піца", "english": "pizza", "emoji": "🍕" }
+  { "id": "336", "ukrainian": "Рукавички", "english": "gloves", "emoji": "🧤" },
+
+  { "id": "337", "ukrainian": "Вчитися", "english": "learn", "emoji": "" },
+  { "id": "338", "ukrainian": "Пам'ятати", "english": "remember", "emoji": "" },
+  { "id": "339", "ukrainian": "Забувати", "english": "forget", "emoji": "" },
+  { "id": "340", "ukrainian": "Запитувати", "english": "ask", "emoji": "" },
+  { "id": "341", "ukrainian": "Розуміти", "english": "understand", "emoji": "" },
+  { "id": "342", "ukrainian": "Пояснювати", "english": "explain", "emoji": "" },
+  { "id": "343", "ukrainian": "Сильний", "english": "strong", "emoji": "" },
+  { "id": "344", "ukrainian": "Слабкий", "english": "weak", "emoji": "" },
+
+  { "id": "345", "ukrainian": "Сміятися", "english": "laugh", "emoji": "" },
+  { "id": "346", "ukrainian": "Плакати", "english": "cry", "emoji": "😢" },
+  { "id": "347", "ukrainian": "Думати", "english": "think", "emoji": "" },
+  { "id": "348", "ukrainian": "Мріяти", "english": "dream", "emoji": "" },
+  { "id": "349", "ukrainian": "Сад", "english": "garden", "emoji": "" },
+  { "id": "350", "ukrainian": "Бібліотека", "english": "library", "emoji": "" },
+  
+  { "id": "351", "ukrainian": "Космос", "english": "space", "emoji": "" },
+  { "id": "352", "ukrainian": "Планета", "english": "planet", "emoji": "🪐" },
+
+  { "id": "353", "ukrainian": "Гра", "english": "game", "emoji": "" },
+  { "id": "354", "ukrainian": "Перемога", "english": "victory", "emoji": "🏆" },
+  { "id": "355", "ukrainian": "Правило", "english": "rule", "emoji": "" },
+  { "id": "356", "ukrainian": "Ідея", "english": "idea", "emoji": "💡" },
+
+  { "id": "357", "ukrainian": "Втомлений", "english": "tired", "emoji": "" },
+  { "id": "358", "ukrainian": "Нудний", "english": "boring", "emoji": "" },
+  { "id": "359", "ukrainian": "Складний", "english": "difficult", "emoji": "" },
+  { "id": "359", "ukrainian": "Легкий / простий", "english": "easy", "emoji": "" },
+  { "id": "360", "ukrainian": "Розумний", "english": "smart", "emoji": "", "alternatives": ["clever"] },
+  { "id": "361", "ukrainian": "Веселий", "english": "fun", "emoji": "" },
+  { "id": "362", "ukrainian": "Зайнятий", "english": "busy", "emoji": "" },
+  { "id": "363", "ukrainian": "Вільний", "english": "free", "emoji": "" },
+  { "id": "364", "ukrainian": "Гучний", "english": "loud", "emoji": "" },
+  { "id": "365", "ukrainian": "Тихий", "english": "quiet", "emoji": "" },
+  { "id": "366", "ukrainian": "Смачний", "english": "tasty", "emoji": "😋" }
+  
 ]
