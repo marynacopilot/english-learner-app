@@ -69,7 +69,7 @@
   { "id": "264", "ukrainian": "Баскетбол", "english": "basketball", "emoji": "" },
   { "id": "265", "ukrainian": "Волейбол", "english": "volleyball", "emoji": "" },
   { "id": "266", "ukrainian": "Теніс", "english": "tennis", "emoji": "🎾" },
-  { "id": "267", "ukrainian": "Камінь", "english": "stone", "alternatives": ["rock"] }
+  { "id": "267", "ukrainian": "Камінь", "english": "stone", "alternatives": ["rock"] },
   { "id": "268", "ukrainian": "Корабель", "english": "ship", "alternatives": ["boat"] },
   { "id": "270", "ukrainian": "Місяць (як одиниця часу)", "english": "month", "emoji": "" },
   { "id": "271", "ukrainian": "Хвилина", "english": "minute", "emoji": "" },
@@ -94,7 +94,7 @@
   { "id": "288", "ukrainian": "Рожевий", "english": "pink" },
   { "id": "289", "ukrainian": "Фіолетовий", "english": "purple" },
   { "id": "290", "ukrainian": "Сірий", "english": "gray", "alternatives": ["grey"] },
-  { "id": "291", "ukrainian": "Камера", "english": "camera" }
+  { "id": "291", "ukrainian": "Камера", "english": "camera" },
   { "id": "292", "ukrainian": "Лялька", "english": "doll" },
   { "id": "293", "ukrainian": "Робот", "english": "robot" },
   { "id": "294", "ukrainian": "Подарунок", "english": "gift", "alternatives": ["present"] },
