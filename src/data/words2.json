@@ -19,7 +19,7 @@
   { "id": "216", "ukrainian": "Країна", "english": "country", "emoji": "" },
   { "id": "217", "ukrainian": "Мова", "english": "language", "emoji": "" },
   { "id": "218", "ukrainian": "Питання", "english": "question", "emoji": "❓" },
-  { "id": "219", "ukrainian": "Відповідь", "english": "answer", "emoji": "💬" },
+  { "id": "219", "ukrainian": "Відповідь / відповідати", "english": "answer", "emoji": "💬" },
   { "id": "220", "ukrainian": "Допомога", "english": "help", "emoji": "🆘" },
 
   { "id": "221", "ukrainian": "Завжди", "english": "always" },
@@ -181,6 +181,21 @@
   { "id": "363", "ukrainian": "Вільний", "english": "free", "emoji": "" },
   { "id": "364", "ukrainian": "Гучний", "english": "loud", "emoji": "" },
   { "id": "365", "ukrainian": "Тихий", "english": "quiet", "emoji": "" },
-  { "id": "366", "ukrainian": "Смачний", "english": "tasty", "emoji": "😋" }
-  
+  { "id": "366", "ukrainian": "Смачний", "english": "tasty", "emoji": "" },
+  { "id": "371", "ukrainian": "Солодкий", "english": "sweet", "emoji": "" },
+  { "id": "372", "ukrainian": "Повний", "english": "full", "emoji": "" },
+  { "id": "373", "ukrainian": "Порожній", "english": "empty", "emoji": "" },
+  { "id": "374", "ukrainian": "Чекати", "english": "wait", "emoji": "" },
+  { "id": "390", "ukrainian": "Давати", "english": "give", "emoji": "" },
+  { "id": "391", "ukrainian": "Брати", "english": "take", "emoji": "" },
+  { "id": "392", "ukrainian": "Показувати", "english": "show", "emoji": "" },
+  { "id": "393", "ukrainian": "Готувати", "english": "cook", "emoji": "" },
+  { "id": "394", "ukrainian": "Відпочивати", "english": "rest", "emoji": "" },
+  { "id": "395", "ukrainian": "Подорожувати", "english": "travel", "emoji": "" },
+  { "id": "396", "ukrainian": "Зустрічати", "english": "meet", "emoji": "" },
+  { "id": "397", "ukrainian": "Телефонувати", "english": "call", "emoji": "📞" },
+  { "id": "398", "ukrainian": "Вибирати", "english": "choose", "emoji": "" },
+  { "id": "399", "ukrainian": "Пробувати", "english": "try", "emoji": "" },
+  { "id": "400", "ukrainian": "Змішувати", "english": "mix", "emoji": "" }
+
 ]
