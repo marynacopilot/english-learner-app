@@ -92,7 +92,7 @@
   { "id": "91", "ukrainian": "Книга", "english": "book", "emoji": "📚" },
   { "id": "92", "ukrainian": "Їжа", "english": "food", "emoji": "" },
   { "id": "93", "ukrainian": "Іграшка", "english": "toy", "emoji": "" },
-  { "id": "94", "ukrainian": "Місяць", "english": "moon", "emoji": "🌙" },
+  { "id": "94", "ukrainian": "Місяць (супутник Землі, небесне тіло)", "english": "moon", "emoji": "🌙" },
   { "id": "95", "ukrainian": "Зірка", "english": "star", "emoji": "⭐" },
   { "id": "96", "ukrainian": "Вода", "english": "water", "emoji": "💧" },
   { "id": "97", "ukrainian": "Яблуко", "english": "apple", "emoji": "🍎" },
