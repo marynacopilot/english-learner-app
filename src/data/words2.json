@@ -182,7 +182,7 @@
   { "id": "364", "ukrainian": "Гучний", "english": "loud", "emoji": "" },
   { "id": "365", "ukrainian": "Тихий", "english": "quiet", "emoji": "" },
   { "id": "366", "ukrainian": "Смачний", "english": "tasty", "emoji": "" },
-  { "id": "367", "ukrainian": "Змішувати", "english": "mix", "emoji": "" }
+  { "id": "367", "ukrainian": "Змішувати", "english": "mix", "emoji": "" },
   { "id": "368", "ukrainian": "Телефонувати", "english": "call", "emoji": "📞" },
   { "id": "369", "ukrainian": "Вибирати", "english": "choose", "emoji": "" },
   { "id": "370", "ukrainian": "Пробувати", "english": "try", "emoji": "" },
@@ -216,5 +216,4 @@
   { "id": "398", "ukrainian": "Пізніше (через деякий час, не зараз)", "english": "later" },
   { "id": "399", "ukrainian": "Інтернет", "english": "internet" },
   { "id": "400", "ukrainian": "Тут (у цьому місці)", "english": "here" }
-
 ]
