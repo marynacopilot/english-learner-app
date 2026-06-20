@@ -91,8 +91,28 @@
   { "id": "480", "ukrainian": "Музей", "english": "museum" },
   { "id": "481", "ukrainian": "Зоопарк", "english": "zoo" },
   { "id": "482", "ukrainian": "Готель", "english": "hotel" },
-  
   { "id": "483", "ukrainian": "Планшет", "english": "tablet" },
-  { "id": "484", "ukrainian": "Екран", "english": "screen" }
-
+  { "id": "484", "ukrainian": "Екран", "english": "screen" },
+  { "id": "485", "ukrainian": "Голова", "english": "head" },
+  { "id": "486", "ukrainian": "Палець", "english": "finger" },
+  { "id": "487", "ukrainian": "Хворий", "english": "sick" },
+  { "id": "488", "ukrainian": "Здоровий", "english": "healthy" },
+  { "id": "489", "ukrainian": "Дешевий", "english": "cheap" }
+  { "id": "490", "ukrainian": "Тому що", "english": "because" },
+  { "id": "491", "ukrainian": "Також", "english": "also" },
+  { "id": "492", "ukrainian": "Дуже", "english": "very" },
+  { "id": "493", "ukrainian": "Теж", "english": "too" },
+  { "id": "494", "ukrainian": "Більше", "english": "more" },
+  { "id": "495", "ukrainian": "Менше", "english": "less" },
+  { "id": "496", "ukrainian": "Багато", "english": "many" },
+  { "id": "497", "ukrainian": "Мало", "english": "few" },
+  { "id": "498", "ukrainian": "Кожен", "english": "every" },
+  { "id": "499", "ukrainian": "Деякий", "english": "some" },
+  { "id": "500", "ukrainian": "Хтось", "english": "someone" },
+  { "id": "501", "ukrainian": "Щось", "english": "something" },
+  { "id": "502", "ukrainian": "Ніхто", "english": "nobody" },
+  { "id": "503", "ukrainian": "Нічого", "english": "nothing" },
+  { "id": "504", "ukrainian": "Так", "english": "yes" },
+  { "id": "505", "ukrainian": "Ні", "english": "no" },
+  { "id": "506", "ukrainian": "Дорогий", "english": "expensive" }
 ]
