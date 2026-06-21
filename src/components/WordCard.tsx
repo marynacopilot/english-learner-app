@@ -38,7 +38,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word }) => {
             <div
               className="text-on-surface"
               style={{
-                fontSize: '30px',
+                fontSize: '40px',
                 marginTop: '0.5rem',
               }}
             >
