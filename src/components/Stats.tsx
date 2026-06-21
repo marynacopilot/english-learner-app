@@ -39,7 +39,6 @@ export const Stats: React.FC<StatsProps> = ({
           cursor-pointer
         "
       >
-        <span className="text-lg">⏩</span>
         <span className="text-on-surface font-bold">
           Skipped: {skipped}
         </span>
