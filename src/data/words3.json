@@ -451,56 +451,460 @@
     ]
   },
 
-  { "id": "51", "ukrainian": "Чотири", "english": "four", "emoji": "4️⃣" },
-  { "id": "52", "ukrainian": "П'ять", "english": "five", "emoji": "5️⃣" },
-  { "id": "53", "ukrainian": "Шість", "english": "six", "emoji": "6️⃣" },
-  { "id": "54", "ukrainian": "Сім", "english": "seven", "emoji": "7️⃣" },
-  { "id": "55", "ukrainian": "Вісім", "english": "eight", "emoji": "8️⃣" },
-  { "id": "56", "ukrainian": "Дев'ять", "english": "nine", "emoji": "9️⃣" },
-  { "id": "57", "ukrainian": "Десять", "english": "ten", "emoji": "🔟" },
-  { "id": "58", "ukrainian": "Понеділок", "english": "Monday", "emoji": "" },
-  { "id": "59", "ukrainian": "Вівторок", "english": "Tuesday", "emoji": "" },
-  { "id": "60", "ukrainian": "Середа", "english": "Wednesday", "emoji": "" },
-  { "id": "61", "ukrainian": "Четвер", "english": "Thursday", "emoji": "" },
-  { "id": "62", "ukrainian": "П'ятниця", "english": "Friday", "emoji": "" },
-  { "id": "63", "ukrainian": "Субота", "english": "Saturday", "emoji": "" },
-  { "id": "64", "ukrainian": "Неділя", "english": "Sunday", "emoji": "" },
-  { "id": "65", "ukrainian": "Січень", "english": "January", "emoji": "" },
-  { "id": "66", "ukrainian": "Лютий", "english": "February", "emoji": "" },
-  { "id": "67", "ukrainian": "Березень", "english": "March", "emoji": "" },
-  { "id": "68", "ukrainian": "Квітень", "english": "April", "emoji": "" },
-  { "id": "69", "ukrainian": "Травень", "english": "May", "emoji": "" },
-  { "id": "70", "ukrainian": "Червень", "english": "June", "emoji": "" },
-  { "id": "71", "ukrainian": "Липень", "english": "July", "emoji": "" },
-  { "id": "72", "ukrainian": "Серпень", "english": "August", "emoji": "" },
-  { "id": "73", "ukrainian": "Вересень", "english": "September", "emoji": "" },
-  { "id": "74", "ukrainian": "Жовтень", "english": "October", "emoji": "" },
-  { "id": "75", "ukrainian": "Листопад", "english": "November", "emoji": "" },
-  { "id": "76", "ukrainian": "Грудень", "english": "December", "emoji": "" },
-  { "id": "77", "ukrainian": "Весна", "english": "spring", "emoji": "🌸" },
-  { "id": "78", "ukrainian": "Літо", "english": "summer", "emoji": "☀️" },
-  { "id": "79", "ukrainian": "Осінь", "english": "autumn", "emoji": "🍂", "alternatives": ["fall"] },
-  { "id": "80", "ukrainian": "Зима", "english": "winter", "emoji": "❄️" },
-  { "id": "81", "ukrainian": "Хороший", "english": "good", "emoji": "" },
-  { "id": "82", "ukrainian": "Кращий", "english": "better", "emoji": "" },
-  { "id": "83", "ukrainian": "Найкращий", "english": "best", "emoji": "" },
-  { "id": "84", "ukrainian": "Миша", "english": "mouse" },
-  { "id": "85", "ukrainian": "Нуль", "english": "zero", "emoji": "" },
-  { "id": "86", "ukrainian": "Муха", "english": "fly", "emoji": "", "alternatives": ["housefly"] },
-  { "id": "87", "ukrainian": "Брат", "english": "brother", "emoji": "" },
-  { "id": "88", "ukrainian": "Сестра", "english": "sister", "emoji": "" },
-  { "id": "89", "ukrainian": "Друг / подруга", "english": "friend", "emoji": "" },
-  { "id": "90", "ukrainian": "Школа", "english": "school", "emoji": "🏫" },
-  { "id": "91", "ukrainian": "Книга", "english": "book", "emoji": "📚" },
-  { "id": "92", "ukrainian": "Їжа", "english": "food", "emoji": "" },
-  { "id": "93", "ukrainian": "Іграшка", "english": "toy", "emoji": "" },
-  { "id": "94", "ukrainian": "Місяць (супутник Землі, небесне тіло)", "english": "moon", "emoji": "🌙" },
-  { "id": "95", "ukrainian": "Зірка", "english": "star", "emoji": "⭐" },
-  { "id": "96", "ukrainian": "Вода", "english": "water", "emoji": "💧" },
-  { "id": "97", "ukrainian": "Яблуко", "english": "apple", "emoji": "🍎" },
-  { "id": "98", "ukrainian": "Квітка", "english": "flower", "emoji": "🌼" },
-  { "id": "99", "ukrainian": "Нога", "english": "leg", "emoji": "" },
-  { "id": "100", "ukrainian": "Рука", "english": "hand", "emoji": "" },
+  {
+    "id": "51",
+    "ukrainian": "Чотири",
+    "english": "four",
+    "phrases": [
+      "I have four pencils in my pencil case at school.",
+      "There are four chairs around the table in my room."
+    ]
+  },
+  {
+    "id": "52",
+    "ukrainian": "П'ять",
+    "english": "five",
+    "phrases": [
+      "I can count five fingers on one hand.",
+      "There are five apples in the basket on the table."
+    ]
+  },
+  {
+    "id": "53",
+    "ukrainian": "Шість",
+    "english": "six",
+    "phrases": [
+      "My alarm clock rings at six in the morning.",
+      "There are six students in our small group today."
+    ]
+  },
+  {
+    "id": "54",
+    "ukrainian": "Сім",
+    "english": "seven",
+    "phrases": [
+      "I wake up at seven and get ready for school.",
+      "There are seven days in one week."
+    ]
+  },
+  {
+    "id": "55",
+    "ukrainian": "Вісім",
+    "english": "eight",
+    "phrases": [
+      "There are eight planets in our solar system that we study.",
+      "I go to bed at eight o’clock in the evening."
+    ]
+  },
+  {
+    "id": "56",
+    "ukrainian": "Дев'ять",
+    "english": "nine",
+    "phrases": [
+      "I finish my homework at nine in the evening.",
+      "There are nine players in a baseball team."
+    ]
+  },
+  {
+    "id": "57",
+    "ukrainian": "Десять",
+    "english": "ten",
+    "phrases": [
+      "I can count to ten without making mistakes.",
+      "There are ten fingers on both of my hands."
+    ]
+  },
+  {
+    "id": "58",
+    "ukrainian": "Понеділок",
+    "english": "Monday",
+    "phrases": [
+      "On Monday I go back to school after the weekend.",
+      "We usually have English class on Monday morning."
+    ]
+  },
+  {
+    "id": "59",
+    "ukrainian": "Вівторок",
+    "english": "Tuesday",
+    "phrases": [
+      "On Tuesday I have football practice after school.",
+      "We study math and science on Tuesday at school."
+    ]
+  },
+  {
+    "id": "60",
+    "ukrainian": "Середа",
+    "english": "Wednesday",
+    "phrases": [
+      "Wednesday is the middle of the school week for me.",
+      "On Wednesday I read a new story in class."
+    ]
+  },
+  {
+    "id": "61",
+    "ukrainian": "Четвер",
+    "english": "Thursday",
+    "phrases": [
+      "On Thursday we usually have a test at school.",
+      "I meet my friends after school on Thursday."
+    ]
+  },
+  {
+    "id": "62",
+    "ukrainian": "П'ятниця",
+    "english": "Friday",
+    "phrases": [
+      "Friday is my favorite day because the weekend starts.",
+      "On Friday we finish school earlier than usual."
+    ]
+  },
+  {
+    "id": "63",
+    "ukrainian": "Субота",
+    "english": "Saturday",
+    "phrases": [
+      "On Saturday I play games and relax at home.",
+      "We go shopping with my family on Saturday morning."
+    ]
+  },
+  {
+    "id": "64",
+    "ukrainian": "Неділя",
+    "english": "Sunday",
+    "phrases": [
+      "On Sunday I usually visit my grandparents.",
+      "Sunday is a quiet day when I rest and prepare for school."
+    ]
+  },
+  {
+    "id": "65",
+    "ukrainian": "Січень",
+    "english": "January",
+    "phrases": [
+      "January is very cold and often snowy in my country.",
+      "In January we start a new year at school."
+    ]
+  },
+  {
+    "id": "66",
+    "ukrainian": "Лютий",
+    "english": "February",
+    "phrases": [
+      "February is a short month with only twenty-eight or twenty-nine days.",
+      "In February the weather is still cold and windy."
+    ]
+  },
+  {
+    "id": "67",
+    "ukrainian": "Березень",
+    "english": "March",
+    "phrases": [
+      "In March the snow starts to melt and spring begins.",
+      "March is the time when days become longer."
+    ]
+  },
+  {
+    "id": "68",
+    "ukrainian": "Квітень",
+    "english": "April",
+    "phrases": [
+      "In April the trees start to become green again.",
+      "April often has rainy days and fresh air."
+    ]
+  },
+  {
+    "id": "69",
+    "ukrainian": "Травень",
+    "english": "May",
+    "phrases": [
+      "In May the weather is warm and flowers are everywhere.",
+      "We often go outside more in May after school."
+    ]
+  },
+  {
+    "id": "70",
+    "ukrainian": "Червень",
+    "english": "June",
+    "phrases": [
+      "In June the school year usually ends and summer begins.",
+      "June is a warm month with long sunny days."
+    ]
+  },
+  {
+    "id": "71",
+    "ukrainian": "Липень",
+    "english": "July",
+    "phrases": [
+      "In July I usually go on summer vacation with my family.",
+      "July is one of the hottest months of the year."
+    ]
+  },
+  {
+    "id": "72",
+    "ukrainian": "Серпень",
+    "english": "August",
+    "phrases": [
+      "In August I still enjoy summer before school starts again.",
+      "August is warm and perfect for outdoor games."
+    ]
+  },
+  {
+    "id": "73",
+    "ukrainian": "Вересень",
+    "english": "September",
+    "phrases": [
+      "In September school starts again after the summer break.",
+      "September is the beginning of autumn."
+    ]
+  },
+  {
+    "id": "74",
+    "ukrainian": "Жовтень",
+    "english": "October",
+    "phrases": [
+      "In October the leaves change color and fall from the trees.",
+      "October is usually cool and a little windy."
+    ]
+  },
+  {
+    "id": "75",
+    "ukrainian": "Листопад",
+    "english": "November",
+    "phrases": [
+      "In November the weather becomes cold and gray.",
+      "November is the time when we wear warm jackets."
+    ]
+  },
+  {
+    "id": "76",
+    "ukrainian": "Грудень",
+    "english": "December",
+    "phrases": [
+      "In December we celebrate holidays and the New Year.",
+      "December is cold and often snowy outside."
+    ]
+  },
+  {
+    "id": "77",
+    "ukrainian": "Весна",
+    "english": "spring",
+    "phrases": [
+      "In spring the flowers start to bloom in the garden.",
+      "Spring is a time when nature becomes green again."
+    ]
+  },
+  {
+    "id": "78",
+    "ukrainian": "Літо",
+    "english": "summer",
+    "phrases": [
+      "In summer I spend a lot of time outside with my friends.",
+      "Summer is warm and the days are very long."
+    ]
+  },
+  {
+    "id": "79",
+    "ukrainian": "Осінь",
+    "english": "autumn",
+    "alternatives": ["fall"],
+    "phrases": [
+      "In autumn the leaves fall from the trees and turn yellow.",
+      "Autumn is cool and sometimes rainy weather."
+    ]
+  },
+  {
+    "id": "80",
+    "ukrainian": "Зима",
+    "english": "winter",
+    "phrases": [
+      "In winter it often snows and everything is white.",
+      "Winter is cold and I wear warm clothes."
+    ]
+  },
+  {
+    "id": "81",
+    "ukrainian": "Хороший",
+    "english": "good",
+    "phrases": [
+      "This is a good book that I enjoy reading every evening.",
+      "She is a good student and always does her homework."
+    ]
+  },
+  {
+    "id": "82",
+    "ukrainian": "Кращий",
+    "english": "better",
+    "phrases": [
+      "I feel better today after I rested yesterday.",
+      "This game is better than the one we played before."
+    ]
+  },
+  {
+    "id": "83",
+    "ukrainian": "Найкращий",
+    "english": "best",
+    "phrases": [
+      "This is the best day of my summer holiday.",
+      "My best friend always helps me at school."
+    ]
+  },
+  {
+    "id": "84",
+    "ukrainian": "Миша",
+    "english": "mouse",
+    "phrases": [
+      "I saw a small mouse in the kitchen at night.",
+      "The mouse ran quickly under the table."
+    ]
+  },
+  {
+    "id": "85",
+    "ukrainian": "Нуль",
+    "english": "zero",
+    "phrases": [
+      "I scored zero points in the first round of the game.",
+      "The temperature outside is zero degrees today."
+    ]
+  },
+  {
+    "id": "86",
+    "ukrainian": "Муха",
+    "english": "fly",
+    "alternatives": ["housefly"],
+    "phrases": [
+      "A fly is flying around the kitchen window.",
+      "I tried to catch the fly but it was too fast."
+    ]
+  },
+  {
+    "id": "87",
+    "ukrainian": "Брат",
+    "english": "brother",
+    "phrases": [
+      "My brother and I play video games together after school.",
+      "He is my older brother and helps me with homework."
+    ]
+  },
+  {
+    "id": "88",
+    "ukrainian": "Сестра",
+    "english": "sister",
+    "phrases": [
+      "My sister and I go to the same school every morning.",
+      "She is my little sister and she likes drawing pictures."
+    ]
+  },
+  {
+    "id": "89",
+    "ukrainian": "Друг / подруга",
+    "english": "friend",
+    "phrases": [
+      "My friend and I play together in the park every day.",
+      "A good friend always helps you when you need support."
+    ]
+  },
+  {
+    "id": "90",
+    "ukrainian": "Школа",
+    "english": "school",
+    "phrases": [
+      "I go to school every morning at eight o’clock.",
+      "Our school has a big playground where we play."
+    ]
+  },
+  {
+    "id": "91",
+    "ukrainian": "Книга",
+    "english": "book",
+    "phrases": [
+      "I am reading an interesting book about animals.",
+      "This book has many colorful pictures and stories."
+    ]
+  },
+  {
+    "id": "92",
+    "ukrainian": "Їжа",
+    "english": "food",
+    "phrases": [
+      "I like healthy food like fruits and vegetables.",
+      "The food at school lunch is usually warm and tasty."
+    ]
+  },
+  {
+    "id": "93",
+    "ukrainian": "Іграшка",
+    "english": "toy",
+    "phrases": [
+      "This toy is my favorite because I play with it every day.",
+      "I got a new toy for my birthday last week."
+    ]
+  },
+  {
+    "id": "94",
+    "ukrainian": "Місяць (супутник Землі, небесне тіло)",
+    "english": "moon",
+    "phrases": [
+      "The moon is bright and beautiful in the night sky.",
+      "I like to look at the moon before I go to sleep."
+    ]
+  },
+  {
+    "id": "95",
+    "ukrainian": "Зірка",
+    "english": "star",
+    "phrases": [
+      "I can see many stars in the sky at night.",
+      "The star shines brightly in the dark sky."
+    ]
+  },
+  {
+    "id": "96",
+    "ukrainian": "Вода",
+    "english": "water",
+    "phrases": [
+      "I drink water after playing football outside.",
+      "Water is important for all people and animals."
+    ]
+  },
+  {
+    "id": "97",
+    "ukrainian": "Яблуко",
+    "english": "apple",
+    "phrases": [
+      "I eat an apple every morning before school.",
+      "The apple is red and very sweet."
+    ]
+  },
+  {
+    "id": "98",
+    "ukrainian": "Квітка",
+    "english": "flower",
+    "phrases": [
+      "I picked a flower from the garden for my mom.",
+      "The flower smells very nice in the spring."
+    ]
+  },
+  {
+    "id": "99",
+    "ukrainian": "Нога",
+    "english": "leg",
+    "phrases": [
+      "I hurt my leg when I was running in the park.",
+      "My leg feels strong after exercise."
+    ]
+  },
+  {
+    "id": "100",
+    "ukrainian": "Рука",
+    "english": "hand",
+    "phrases": [
+      "I washed my hand before eating dinner.",
+      "She raised her hand to answer the question in class."
+    ]
+  },
+
+
   { "id": "101", "ukrainian": "Риба", "english": "fish", "emoji": "🐟" },
   { "id": "102", "ukrainian": "Щасливий", "english": "happy", "emoji": "" },
   { "id": "103", "ukrainian": "Сумний", "english": "sad", "emoji": "" },
