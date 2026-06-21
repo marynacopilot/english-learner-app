@@ -27,7 +27,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word }) => {
           <p
             className="text-primary font-bold"
             style={{
-              fontSize: '2.75rem', // 2.5rem (Tailwind text-4xl) × 1.1
+              fontSize: '3rem',
             }}
           >
             {word.ukrainian}
@@ -38,7 +38,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word }) => {
             <div
               className="text-on-surface"
               style={{
-                fontSize: '0.99em', // 0.9em × 1.1
+                fontSize: '1.1em',
                 marginTop: '0.5rem',
               }}
             >
