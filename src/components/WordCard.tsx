@@ -58,7 +58,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word }) => {
                     onClick={() => pronouncePhrase(phrase)}
                     variant="tertiary"
                     size="sm"
-                    className="min-w-0 p-2 rounded-full bg-transparent text-on-surface hover:bg-surface-container-low border border-outline"
+                    className="min-w-0 p-2 rounded-full bg-transparent text-on-surface border border-outline hover:bg-secondary-fixed/30 hover:text-on-primary"
                     aria-label={`Pronounce example: ${phrase}`}
                   >
                     🔊
