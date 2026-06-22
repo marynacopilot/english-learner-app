@@ -2,6 +2,8 @@ import React from 'react';
 import { VocabularyApp } from './components/VocabularyApp';
 import { useDictionaries } from './hooks/useDictionaries';
 import { Button } from './components/Button';
+import { VoiceSelector } from './components/VoiceSelector';
+
 import './index.css';
 
 function App() {
@@ -60,7 +62,13 @@ const handleResetVocabulary = () => {
   return (
     <div className="App">
       {/* Header з селектором словників і статистикою */}
+      
       <header className="bg-surface-container-low p-4 shadow-soft flex-shrink-0">
+        <div className="flex items-center gap-4">
+  {/* existing dictionary selector */}
+  <VoiceSelector />
+  {/* rest of header */}
+</div>
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-between gap-4 flex-wrap">
             {/* Dictionary Selector */}
