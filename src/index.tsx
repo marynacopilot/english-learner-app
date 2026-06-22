@@ -1,4 +1,3 @@
-// src/index.tsx (or at top-level where <App/> is rendered)
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
