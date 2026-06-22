@@ -1,26 +1,34 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import useSpeech from '../hooks/useSpeech';
 import { Button } from './Button';
 
 const SAMPLE_TEXT = 'This is a pronunciation test.';
 
 export const VoiceSelector: React.FC = () => {
-  const {
-    // use the english-only list exposed by the hook
-    englishVoices,
-    selectedVoiceURI,
-    setSelectedVoice,
-    lastSelection,
-    speak,
-    cancel,
-  } = useSpeech();
+  const speech = useSpeech();
+
+  // Guard against older hook shapes or voices not loaded yet
+  const englishVoices = (speech as any).englishVoices ?? (speech.voices ?? []).filter((v: SpeechSynthesisVoice) =>
+    (v.lang || '').toLowerCase().startsWith('en')
+  );
+
+  const selectedVoiceURI = (speech as any).selectedVoiceURI ?? null;
+  const setSelectedVoice = (speech as any).setSelectedVoice ?? (() => {});
+  const lastSelection = (speech as any).lastSelection ?? null;
+  const speak = (speech as any).speak ?? (() => {});
+  const cancel = (speech as any).cancel ?? (() => {});
 
   const [localSelection, setLocalSelection] = useState<string | null>(selectedVoiceURI || null);
   const [playingSample, setPlayingSample] = useState(false);
 
+  useEffect(() => {
+    // keep localSelection in sync if persisted selection changes elsewhere
+    setLocalSelection(selectedVoiceURI || null);
+  }, [selectedVoiceURI]);
+
   // Build display list from englishVoices
   const voiceOptions = useMemo(() => {
-    return englishVoices.map((v) => ({
+    return englishVoices.map((v: SpeechSynthesisVoice) => ({
       label: `${v.name} — ${v.lang}`,
       uri: v.voiceURI || v.name,
       name: v.name,
@@ -34,18 +42,14 @@ export const VoiceSelector: React.FC = () => {
   };
 
   const playSample = (uri?: string | null) => {
-    // Play a sample using the currently selected or provided URI
     try {
       setPlayingSample(true);
-      // If a specific uri is given, set it as override temporarily (persisted)
       if (uri) {
         setSelectedVoice(uri);
       }
       // speak sample slightly slower to improve clarity
       speak(SAMPLE_TEXT, { lang: 'en-US', rate: 0.95 });
     } finally {
-      // setPlayingSample will be toggled by speaking state if needed;
-      // we clear here after a short delay for basic UX (not required)
       setTimeout(() => setPlayingSample(false), 1000);
     }
   };
