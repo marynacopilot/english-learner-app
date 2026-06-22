@@ -94,44 +94,35 @@ const handleResetVocabulary = () => {
             )}
             
             {/* Stats Buttons */}
-            <div className="flex gap-3 justify-end items-center flex-wrap">
-              <button
-                onClick={handleLearnedClick}
-                className="
-                  flex items-center gap-2 px-4 py-2 rounded-full
-                  bg-success/20 border-2 border-success
-                  hover:bg-success/30 transition-colors
-                  cursor-pointer
-                "
-              >
-                <span className="text-lg">✓</span>
-                <span className="text-on-surface font-bold">
-                  Learned: {stats.learned}
-                </span>
-              </button>
+<div className="flex gap-3 justify-end items-center flex-wrap">
+  <Button
+    onClick={handleLearnedClick}
+    variant="primary"
+    size="md"
+    className="flex items-center gap-2"
+  >
+    <span className="text-lg">✓</span>
+    <span className="text-on-surface font-bold">Learned: {stats.learned}</span>
+  </Button>
 
-              <button
-                onClick={handleSkippedClick}
-                className="
-                  flex items-center gap-2 px-4 py-2 rounded-full
-                  bg-tertiary-fixed/30 border-2 border-tertiary-fixed-dim
-                  hover:bg-tertiary-fixed/50 transition-colors
-                  cursor-pointer
-                "
-              >
-                <span className="text-on-surface font-bold">
-                  Skipped: {stats.skipped}
-                </span>
-              </button>
+  <Button
+    onClick={handleSkippedClick}
+    variant="secondary"
+    size="md"
+    className="flex items-center gap-2"
+  >
+    <span className="text-on-surface font-bold">Skipped: {stats.skipped}</span>
+  </Button>
 
-              <Button
-                onClick={handleResetVocabulary}
-                variant="secondary"
-                size="sm"
-              >
-                🔄 Reset
-              </Button>
-            </div>
+  <Button
+    onClick={handleResetVocabulary}
+    variant="primary"
+    size="md"
+    className="flex items-center gap-2"
+  >
+    Reset
+  </Button>
+</div>
           </div>
         </div>
       </header>
