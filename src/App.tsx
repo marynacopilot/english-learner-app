@@ -99,26 +99,27 @@ const handleResetVocabulary = () => {
     onClick={handleLearnedClick}
     variant="primary"
     size="md"
-    className="flex items-center gap-2"
+    className="flex items-center gap-2 text-white"
   >
     <span className="text-lg">✓</span>
-    <span className="text-on-surface font-bold">Learned: {stats.learned}</span>
+    <span className="font-bold">Learned: {stats.learned}</span>
   </Button>
 
   <Button
     onClick={handleSkippedClick}
     variant="secondary"
     size="md"
-    className="flex items-center gap-2"
+    className="flex items-center gap-2 text-white"
   >
-    <span className="text-on-surface font-bold">Skipped: {stats.skipped}</span>
+    <span className="font-bold">Skipped: {stats.skipped}</span>
   </Button>
 
+  {/* Reset: keep a lighter appearance than Skipped by overriding the background and using a less-contrasting text */}
   <Button
     onClick={handleResetVocabulary}
-    variant="primary"
+    variant="secondary"
     size="md"
-    className="flex items-center gap-2"
+    className="flex items-center gap-2 bg-secondary-fixed/20 text-on-surface"
   >
     Reset
   </Button>
