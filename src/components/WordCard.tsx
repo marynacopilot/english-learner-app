@@ -8,36 +8,28 @@ interface WordCardProps {
 }
 
 export const WordCard: React.FC<WordCardProps> = ({ word }) => {
-  const { speak, cancel, speaking } = useSpeech();
+  const { speak } = useSpeech();
 
   if (!word) {
     return (
       <div className="w-full max-w-2xl mx-auto px-gutter">
         <div className="bg-surface-container-lowest rounded-xl shadow-soft p-8 text-center">
-          <p className="text-on-surface text-xl">
-            🎉 Congratulations! You've completed all the words!
-          </p>
+          <p className="text-on-surface text-xl">🎉 Congratulations! You've completed all the words!</p>
         </div>
       </div>
     );
   }
 
-  const pronounceWord = () => {
-    // try Ukrainian first, fallback to English-preferred voices
-    // Some browsers may not have 'uk' voice; hook handles fallback
-    speak(word.ukrainian, { lang: 'uk' });
-  };
-
   const pronouncePhrase = (phrase: string) => {
-    // Example sentences / phrases are likely in English; prefer English voice
-    speak(phrase, { lang: 'en-US' });
+    // Speak example phrases in English 10% slower (rate 0.9)
+    speak(phrase, { lang: 'en-US', rate: 0.9 });
   };
 
   return (
     <div className="w-full max-w-2xl mx-auto px-gutter animate-slide-up">
       <div className="bg-surface-container-lowest rounded-xl shadow-soft p-6 text-center">
         <div style={{ fontFamily: 'Quicksand' }}>
-          {/* Word row with pronounce button */}
+          {/* Ukrainian word (no speaker button) */}
           <div className="flex items-center justify-center gap-3">
             <p
               className="text-primary font-bold"
@@ -48,18 +40,6 @@ export const WordCard: React.FC<WordCardProps> = ({ word }) => {
             >
               {word.ukrainian}
             </p>
-
-            {/* Speaker icon button: pronounce the main word */}
-            <Button
-              onClick={pronounceWord}
-              variant="tertiary"
-              size="sm"
-              className="min-w-0 p-2 rounded-full"
-              // accessible label
-              aria-label={`Pronounce ${word.ukrainian}`}
-            >
-              🔊
-            </Button>
           </div>
 
           {/* Phrases (each with its own pronounce button) */}
@@ -78,7 +58,7 @@ export const WordCard: React.FC<WordCardProps> = ({ word }) => {
                     onClick={() => pronouncePhrase(phrase)}
                     variant="tertiary"
                     size="sm"
-                    className="min-w-0 p-2 rounded-full"
+                    className="min-w-0 p-2 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high border border-outline"
                     aria-label={`Pronounce example: ${phrase}`}
                   >
                     🔊
