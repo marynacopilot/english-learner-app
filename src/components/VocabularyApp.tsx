@@ -109,24 +109,26 @@ export const VocabularyApp: React.FC<VocabularyAppProps> = ({
               />
 
               {/* Action Buttons */}
-              <div className="flex gap-2 justify-center max-w-2xl mx-auto px-gutter">
-                <Button
-                  onClick={handleSubmit}
-                  disabled={false}
-                  variant="primary"
-                  size="md"
-                >
-                  Check
-                </Button>
-                <Button
-                  onClick={skipWord}
-                  disabled={false}
-                  variant="secondary"
-                  size="md"
-                >
-                  Skip
-                </Button>
-              </div>
+<div className="flex gap-2 justify-center max-w-2xl mx-auto px-gutter">
+  <Button
+    onClick={handleSubmit}
+    disabled={false}
+    variant="primary"
+    size="md"
+    className="border border-black"
+  >
+    Check
+  </Button>
+  <Button
+    onClick={skipWord}
+    disabled={false}
+    variant="secondary"
+    size="md"
+    className="border border-black"
+  >
+    Skip
+  </Button>
+</div>
 
               {/* Repeat Skipped Words Toggle */}
               {canToggleSkippedMode && (
