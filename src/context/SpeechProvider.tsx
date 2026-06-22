@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import useSpeech from '../hooks/useSpeech';
-import { Button } from './Button';
 
 /**
  * VoiceSelector: shows only serious voices by default (from SpeechProvider).
