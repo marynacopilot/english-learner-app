@@ -31,19 +31,20 @@ export const Button: React.FC<ButtonProps> = ({
   className = '',
 }) => {
   return (
-    <button
-      onClick={onClick}
-      disabled={disabled}
-      className={`
-        rounded-base font-bold transition-all duration-200
-        active:translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed
-        ${variantClasses[variant]}
-        ${sizeClasses[size]}
-        ${className}
-      `}
-      style={{ fontFamily: 'Quicksand' }}
-    >
-      {children}
-    </button>
+<button
+  onClick={onClick}
+  disabled={disabled}
+  className={`
+    rounded-base font-bold transition-all duration-200
+    active:translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed
+    border border-black
+    ${variantClasses[variant]}
+    ${sizeClasses[size]}
+    ${className}
+  `}
+  style={{ fontFamily: 'Quicksand' }}
+>
+  {children}
+</button>
   );
 };
