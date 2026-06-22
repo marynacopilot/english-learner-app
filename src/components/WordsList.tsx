@@ -34,15 +34,24 @@ export const WordsList: React.FC<WordsListProps> = ({
 
   if (!isOpen) return null;
 
-  const bgColor = type === 'learned' ? 'bg-success/20 border-success' : 'bg-tertiary-fixed/30 border-tertiary-fixed-dim';
-  const headerBg = type === 'learned' ? 'bg-success/30' : 'bg-tertiary-fixed/20';
-  const icon = type === 'learned' ? '✓' : '⏩';
+  const isLearned = type === 'learned';
+
+  // Match modal header and badge colors to the corresponding header buttons
+  // Learned -> primary style (white text on primary background)
+  // Skipped -> secondary/tertiary style (white text on secondary background)
+  const headerBg = isLearned ? 'bg-primary' : 'bg-secondary-fixed';
+  const headerBorder = isLearned ? 'border-primary' : 'border-secondary-fixed-dim';
+  const badgeBg = isLearned ? 'bg-success/30' : 'bg-tertiary-fixed/20';
+  const badgeBorder = isLearned ? 'border-success/40' : 'border-tertiary-fixed-dim';
+  const titleTextClass = isLearned ? 'text-on-primary' : 'text-on-surface';
+  const badgeTextClass = isLearned ? 'text-on-primary' : 'text-on-surface';
+  const icon = isLearned ? '✓' : '⏩';
 
   // Filter words based on search query
   const filteredWords = words.filter((word) => {
     const query = searchQuery.toLowerCase().trim();
     if (!query) return true;
-    
+
     return (
       word.ukrainian.toLowerCase().includes(query) ||
       word.english.toLowerCase().includes(query)
@@ -63,19 +72,19 @@ export const WordsList: React.FC<WordsListProps> = ({
     >
       <div className="bg-surface-container-lowest rounded-xl max-w-2xl w-full max-h-[80vh] overflow-hidden flex flex-col shadow-soft-lg animate-slide-up">
         {/* Header */}
-        <div className={`${headerBg} p-6 flex items-center justify-between border-b-2 ${type === 'learned' ? 'border-success' : 'border-tertiary-fixed-dim'}`}>
+        <div className={`${headerBg} p-6 flex items-center justify-between border-b-2 ${headerBorder}`}>
           <div className="flex items-center gap-3">
-            <span className="text-2xl">{icon}</span>
+            <span className={`text-2xl ${isLearned ? 'text-on-primary' : 'text-on-surface'}`}>{icon}</span>
             <div>
               <h2 
-                className="text-lg font-bold text-on-surface"
+                className={`text-lg font-bold ${titleTextClass}`}
                 style={{ fontFamily: 'Quicksand' }}
               >
                 {title}
               </h2>
             </div>
           </div>
-          <span className={`${bgColor} px-3 py-1 rounded-full text-sm font-bold text-on-surface`}>
+          <span className={`${badgeBg} ${badgeBorder} px-3 py-1 rounded-full text-sm font-bold ${badgeTextClass}`}>
             {filteredWords.length}/{words.length}
           </span>
         </div>
@@ -113,7 +122,7 @@ export const WordsList: React.FC<WordsListProps> = ({
           ) : (
             <div className="divide-y divide-outline-variant">
 {filteredWords.map((word) => {
-  const hasEmoji = word.emoji && word.emoji.trim() !== '';
+  const hasEmoji = (word as any).emoji && (word as any).emoji.trim() !== '';
   return (
     <div 
       key={word.id} 
@@ -121,7 +130,7 @@ export const WordsList: React.FC<WordsListProps> = ({
     >
       <div className="flex items-start justify-between gap-4">
         <p className="text-on-surface font-bold text-lg flex-1">
-          {hasEmoji && `${word.emoji} `}{word.ukrainian}
+          {hasEmoji && `${(word as any).emoji} `}{word.ukrainian}
         </p>
         <p className="text-on-surface font-bold text-lg flex-1 text-right">
           {word.english}
