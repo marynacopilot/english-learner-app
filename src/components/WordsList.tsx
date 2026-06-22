@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Word } from '../types/vocabulary';
 
 interface WordsListProps {
@@ -17,6 +18,12 @@ export const WordsList: React.FC<WordsListProps> = ({
   type = 'skipped',
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
+
+  // Tooltip state (word + rect)
+  const [tooltipTarget, setTooltipTarget] = useState<{
+    rect: DOMRect;
+    word: Word;
+  } | null>(null);
 
   // Handle Escape key
   useEffect(() => {
@@ -37,8 +44,6 @@ export const WordsList: React.FC<WordsListProps> = ({
   const isLearned = type === 'learned';
 
   // Match modal header and badge colors to the corresponding header buttons
-  // Learned -> primary style (white text on primary background)
-  // Skipped -> secondary/tertiary style (white text on secondary background)
   const headerBg = isLearned ? 'bg-primary' : 'bg-secondary-fixed';
   const headerBorder = isLearned ? 'border-primary' : 'border-secondary-fixed-dim';
   const badgeBg = isLearned ? 'bg-success/30' : 'bg-tertiary-fixed/20';
@@ -63,6 +68,63 @@ export const WordsList: React.FC<WordsListProps> = ({
     if (e.target === e.currentTarget) {
       onClose();
     }
+  };
+
+  // Handlers to show/hide tooltip based on the row element
+  const showTooltipForRow = (rowEl: HTMLElement | null, word: Word | null) => {
+    if (rowEl && word) {
+      const rect = rowEl.getBoundingClientRect();
+      setTooltipTarget({ rect, word });
+    } else {
+      setTooltipTarget(null);
+    }
+  };
+
+  // Portal tooltip rendering
+  const renderTooltipPortal = () => {
+    if (!tooltipTarget) return null;
+    const { rect, word } = tooltipTarget;
+    const alternatives = (word as any).alternatives || [];
+    const phrases = (word as any).phrases || [];
+
+    const left = rect.left + rect.width / 2;
+    const top = rect.bottom + 8; // 8px spacing
+
+    const tooltip = (
+      <div
+        role="tooltip"
+        style={{
+          position: 'fixed',
+          left,
+          top,
+          transform: 'translateX(-50%)',
+          width: 320,
+          zIndex: 99999,
+        }}
+        className="bg-surface-container-lowest text-on-surface border border-outline rounded-md p-3 shadow-lg whitespace-normal text-sm"
+      >
+        {alternatives && alternatives.length > 0 && (
+          <div className="mb-2">
+            <div className="text-xs font-bold">Alternatives</div>
+            <div className="text-xs mt-1">{alternatives.join(', ')}</div>
+          </div>
+        )}
+
+        {phrases && phrases.length > 0 && (
+          <div>
+            <div className="text-xs font-bold">Phrases</div>
+            <div className="text-xs mt-1 space-y-1">
+              {phrases.map((p: string, i: number) => (
+                <div key={i}>• {p}</div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    );
+
+    // render to document.body
+    return typeof document !== 'undefined' ? createPortal(tooltip, document.body) : null;
   };
 
   return (
@@ -132,6 +194,10 @@ export const WordsList: React.FC<WordsListProps> = ({
                     key={word.id}
                     tabIndex={0}
                     className="p-4 hover:bg-surface-container transition-colors group relative"
+                    onMouseEnter={(e) => showTooltipForRow(e.currentTarget as HTMLElement, hasTooltip ? word : null)}
+                    onMouseLeave={() => showTooltipForRow(null, null)}
+                    onFocus={(e) => showTooltipForRow(e.currentTarget as HTMLElement, hasTooltip ? word : null)}
+                    onBlur={() => showTooltipForRow(null, null)}
                   >
                     <div className="flex items-start justify-between gap-4">
                       <p className="text-on-surface font-bold text-lg flex-1">
@@ -141,37 +207,6 @@ export const WordsList: React.FC<WordsListProps> = ({
                         {word.english}
                       </p>
                     </div>
-
-                    {/* Tooltip: shown on hover and focus */}
-                    {hasTooltip && (
-                      <div
-                        className="
-                          hidden group-hover:block group-focus:block
-                          absolute left-1/2 transform -translate-x-1/2 top-full mt-2 w-[320px]
-                          bg-surface-container-lowest text-on-surface border border-outline rounded-md p-3
-                          shadow-lg z-50 whitespace-normal text-sm
-                        "
-                        role="tooltip"
-                      >
-                        {alternatives && alternatives.length > 0 && (
-                          <div className="mb-2">
-                            <div className="text-xs font-bold">Alternatives</div>
-                            <div className="text-xs mt-1">{alternatives.join(', ')}</div>
-                          </div>
-                        )}
-
-                        {phrases && phrases.length > 0 && (
-                          <div>
-                            <div className="text-xs font-bold">Phrases</div>
-                            <div className="text-xs mt-1 space-y-1">
-                              {phrases.map((p: string, i: number) => (
-                                <div key={i}>• {p}</div>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    )}
                   </div>
                 );
               })}
@@ -194,6 +229,9 @@ export const WordsList: React.FC<WordsListProps> = ({
           </button>
         </div>
       </div>
+
+      {/* Tooltip portal rendered above everything */}
+      {renderTooltipPortal()}
     </div>
   );
 };
